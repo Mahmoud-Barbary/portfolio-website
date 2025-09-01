@@ -1,0 +1,282 @@
+/* Header component styles - Dark Theme */
+
+/* Main header container */
+.header {
+  /* Flexbox layout to position name on left, social links on right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Spacing and padding */
+  padding: 1.5rem 2rem;
+  
+  /* Dark background to match theme */
+  background-color: var(--bg-primary);
+  
+  /* Ensure header stays at top */
+  position: relative;
+  
+  /* Add subtle border bottom */
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Left side containing the name */
+.header-left {
+  /* Flexbox for centering the name vertically */
+  display: flex;
+  align-items: center;
+}
+
+/* Name button styling */
+.name-button {
+  /* Remove default button styling */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
+  /* Override global button styles */
+  background-color: transparent !important;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+/* Remove focus outline for name button */
+.name-button:focus,
+.name-button:focus-visible {
+  outline: none;
+  background-color: transparent !important;
+}
+
+/* Name styling */
+.name {
+  /* Montserrat font for headings */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  
+  /* Off-white text color */
+  color: var(--text-primary);
+  
+  /* Remove default margin to control spacing */
+  margin: 0;
+  
+  /* Font size for prominence */
+  font-size: 1.8rem;
+  
+  /* Letter spacing for elegance */
+  letter-spacing: -0.02em;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Hover effect for name button - only subtle scale, no color change */
+.name-button:hover .name {
+  /* Subtle scale effect only */
+  transform: scale(1.02);
+}
+
+/* Right side containing social links and resume button */
+.header-right {
+  /* Flexbox to arrange items horizontally */
+  display: flex;
+  align-items: center;
+  
+  /* Space between social links and resume button */
+  gap: 1rem;
+}
+
+/* Social link buttons (LinkedIn, GitHub) */
+.social-link {
+  /* Larger size for better visibility */
+  width: 40px;
+  height: 40px;
+  
+  /* Remove default button styling */
+  border: none;
+  border-radius: 0;
+  
+  /* Flexbox to center the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Transparent background */
+  background-color: transparent;
+}
+
+/* LinkedIn button styling */
+.linkedin {
+  /* Transparent background */
+  background-color: transparent;
+}
+
+/* LinkedIn default icon - white like GitHub */
+.linkedin .linkedin-default {
+  /* Make it white like GitHub */
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+/* LinkedIn hover icon - hidden by default */
+.linkedin .linkedin-hover {
+  /* Hide the filled version by default */
+  display: none;
+  filter: none;
+}
+
+/* GitHub button styling */
+.github {
+  /* Transparent background */
+  background-color: transparent;
+}
+
+/* Social icon image styling */
+.social-icon-image {
+  /* Even larger size for better visibility */
+  width: 36px;
+  height: 36px;
+  
+  /* Ensure icon displays properly without cropping */
+  object-fit: contain;
+  object-position: center;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Display properly */
+  display: block;
+  
+  /* Make icons white/colorless by default */
+  filter: brightness(0) invert(1);
+}
+
+/* Resume button styling */
+.resume-button {
+  /* White background like the social icons appear */
+  background-color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  
+  /* Padding for comfortable clicking */
+  padding: 0.6rem 1.2rem;
+  
+  /* Flexbox to arrange text and icon */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Dark text on white background */
+  color: var(--bg-primary);
+  
+  /* Use Inter font */
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Download icon styling */
+.download-icon {
+  /* Slightly smaller than text */
+  font-size: 0.8rem;
+}
+
+/* Hover effects for better interactivity */
+.social-link:hover {
+  /* Slight scale up on hover */
+  transform: scale(1.05);
+}
+
+.linkedin:hover {
+  /* Keep transparent background on hover */
+  background-color: transparent;
+}
+
+.linkedin:hover .linkedin-default {
+  /* Hide the default white version on hover */
+  display: none;
+}
+
+.linkedin:hover .linkedin-hover {
+  /* Show the filled version on hover */
+  display: block;
+  transform: scale(1.1);
+}
+
+.github:hover {
+  /* Keep transparent background on hover */
+  background-color: transparent;
+}
+
+.github:hover .social-icon-image {
+  /* Scale up and restore original colors on hover */
+  transform: scale(1.1);
+  filter: none;
+}
+
+.resume-button:hover {
+  /* Scale up like social icons and change to purple background on hover */
+  background-color: var(--accent-purple);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .header {
+    /* Reduce padding on mobile */
+    padding: 1rem;
+  }
+  
+  .name {
+    /* Smaller font size on mobile */
+    font-size: 1.5rem;
+  }
+  
+  .header-right {
+    /* Reduce gap on mobile */
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    /* Smaller buttons on mobile */
+    width: 40px;
+    height: 40px;
+  }
+  
+  .resume-button {
+    /* Smaller padding on mobile */
+    padding: 0.5rem 1rem;
+  }
+}

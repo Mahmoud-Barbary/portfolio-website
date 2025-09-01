@@ -1,0 +1,179 @@
+/* Header component styles using CSS Modules */
+/* CSS Modules automatically scope these styles to this component only */
+
+/* Main header container */
+.header {
+  /* Flexbox layout to position name on left, social links on right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Spacing and padding */
+  padding: 1rem 2rem;
+  
+  /* Light gray background as shown in your design */
+  background-color: #f5f5f5;
+  
+  /* Ensure header stays at top */
+  position: relative;
+}
+
+/* Left side containing the name */
+.header-left {
+  /* Flexbox for centering the name vertically */
+  display: flex;
+  align-items: center;
+}
+
+/* Name styling */
+.name {
+  /* Bold text as shown in your design */
+  font-weight: bold;
+  
+  /* Black text color */
+  color: #000;
+  
+  /* Remove default margin to control spacing */
+  margin: 0;
+  
+  /* Font size for prominence */
+  font-size: 1.5rem;
+}
+
+/* Right side containing social links and resume button */
+.header-right {
+  /* Flexbox to arrange items horizontally */
+  display: flex;
+  align-items: center;
+  
+  /* Space between social links and resume button */
+  gap: 1rem;
+}
+
+/* Social link buttons (LinkedIn, GitHub) */
+.social-link {
+  /* Square shape as shown in your design */
+  width: 40px;
+  height: 40px;
+  
+  /* Remove default button styling */
+  border: none;
+  border-radius: 4px;
+  
+  /* Flexbox to center the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: transform 0.2s ease;
+}
+
+/* LinkedIn button styling */
+.linkedin {
+  /* Blue background as shown in your design */
+  background-color: #0077b5;
+}
+
+/* GitHub button styling */
+.github {
+  /* Dark gray background as shown in your design */
+  background-color: #333;
+}
+
+/* Social icon text styling */
+.social-icon {
+  /* White text for contrast */
+  color: white;
+  
+  /* Bold text for better visibility */
+  font-weight: bold;
+  
+  /* Smaller font size for icons */
+  font-size: 0.9rem;
+}
+
+/* Resume button styling */
+.resume-button {
+  /* White background with rounded corners */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  
+  /* Padding for comfortable clicking */
+  padding: 0.5rem 1rem;
+  
+  /* Flexbox to arrange text and icon */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+}
+
+/* Download icon styling */
+.download-icon {
+  /* Slightly smaller than text */
+  font-size: 0.8rem;
+}
+
+/* Bottom divider line */
+.header-divider {
+  /* Thin black line as shown in your design */
+  height: 1px;
+  background-color: #000;
+  
+  /* Position at bottom of header */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Hover effects for better interactivity */
+.social-link:hover {
+  /* Slight scale up on hover */
+  transform: scale(1.05);
+}
+
+.resume-button:hover {
+  /* Slight background color change on hover */
+  background-color: #f8f8f8;
+  border-color: #bbb;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .header {
+    /* Reduce padding on mobile */
+    padding: 1rem;
+  }
+  
+  .name {
+    /* Smaller font size on mobile */
+    font-size: 1.2rem;
+  }
+  
+  .header-right {
+    /* Reduce gap on mobile */
+    gap: 0.5rem;
+  }
+  
+  .social-link {
+    /* Smaller buttons on mobile */
+    width: 35px;
+    height: 35px;
+  }
+  
+  .resume-button {
+    /* Smaller padding on mobile */
+    padding: 0.4rem 0.8rem;
+  }
+}

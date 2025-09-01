@@ -1,0 +1,225 @@
+/* Hero component styles - Dark Theme */
+
+/* Main hero section container */
+.hero {
+  /* Flexbox layout for side-by-side content */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  /* Take up left portion of the layout */
+  width: 70%;
+  padding: 1rem 2rem 2rem 2rem;
+  
+  /* Minimum height for proper spacing */
+  min-height: 70vh;
+  
+  /* Dark background */
+  background-color: var(--bg-primary);
+  
+  /* Remove top margin to close gap with header */
+  margin-top: 0;
+}
+
+/* Left side: Photo container */
+.hero-photo {
+  /* Take up roughly 30% of the space - smaller for more text space */
+  flex: 0 0 30%;
+  
+  /* Center the photo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Add some spacing from the text */
+  margin-right: 3rem;
+}
+
+/* Profile photo styling */
+.profile-photo {
+  /* Square shape for the photo */
+  width: 300px;
+  height: 300px;
+  
+  /* Circular shape */
+  border-radius: 50%;
+  
+  /* Border for definition */
+  border: 2px solid var(--border-color);
+  
+  /* Ensure photo covers the entire area without distortion */
+  object-fit: cover;
+  object-position: center;
+  
+  /* Smooth transition for future hover effects */
+  transition: all 0.3s ease;
+  
+  /* Ensure photo displays properly */
+  display: block;
+}
+
+/* Right side: Content container */
+.hero-content {
+  /* Take up the remaining space */
+  flex: 1;
+  
+  /* Add some spacing from the photo */
+  margin-left: 2rem;
+}
+
+/* Hero statement container */
+.hero-statement {
+  /* Montserrat font for headings */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  
+  /* Remove default margin */
+  margin: 0 0 1rem 0;
+  
+  /* Line height for proper spacing */
+  line-height: 1.1;
+  
+  /* Letter spacing for elegance */
+  letter-spacing: -0.02em;
+}
+
+/* Greeting text within statement */
+.hero-greeting {
+  /* Light gray text for subtlety */
+  color: var(--text-secondary);
+  
+  /* Same font as parent */
+  font-weight: 500;
+}
+
+/* Hero name within statement */
+.hero-name {
+  /* White text for prominence */
+  color: var(--text-primary);
+  
+  /* Keep bold weight */
+  font-weight: 700;
+}
+
+/* Hero title styling */
+.hero-title {
+  /* Montserrat font for headings */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  
+  /* Accent purple color for emphasis */
+  color: var(--accent-purple);
+  
+  /* Letter spacing for elegance */
+  letter-spacing: -0.01em;
+  
+  /* Remove default margin */
+  margin: 0 0 1.5rem 0;
+  
+  /* Line height for proper spacing */
+  line-height: 1.2;
+}
+
+/* Hero description container */
+.hero-description {
+  /* Reduce margin to save vertical space */
+  margin: 0 0 1.5rem 0;
+  
+  /* Even larger maximum width for much more horizontal space */
+  max-width: 800px;
+  
+  /* Space between lines - reduced gap */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  
+  /* Flex grow to match height */
+  flex-grow: 1;
+  justify-content: center;
+}
+
+/* Individual description lines */
+.description-line {
+  /* Montserrat font to match the title */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+  
+  /* White text for prominence */
+  color: var(--text-primary);
+  
+  /* Letter spacing for elegance like the title */
+  letter-spacing: -0.01em;
+  
+  /* Remove default margin */
+  margin: 0;
+}
+
+/* Highlighted text within description */
+.highlight {
+  /* Purple accent color for emphasis */
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    /* Stack content vertically on mobile */
+    flex-direction: column;
+    
+    /* Reduce padding */
+    padding: 2rem 1rem;
+    
+    /* Center content */
+    text-align: center;
+  }
+  
+  .hero-photo {
+    /* Full width on mobile */
+    flex: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-photo {
+    /* Smaller photo on mobile - keep circular */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  
+  .hero-content {
+    /* Full width on mobile */
+    flex: none;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .hero-statement {
+    /* Smaller hero statement on mobile */
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    /* Smaller font size on mobile */
+    font-size: 1.4rem;
+  }
+  
+  .hero-description {
+    /* Center text on mobile and adjust max width */
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .description-line {
+    /* Smaller but still prominent on mobile */
+    font-size: 1.1rem;
+  }
+}

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// Main App component - this is the root component of our portfolio website
+import React from 'react'
 import './App.css'
+import Header from './components/Header/Header.jsx'
+import Hero from './components/Hero/Hero.jsx'
+import Education from './components/Education/Education.jsx'
 
+// Main App function component
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    // Main app container
+    <div className="App">
+      {/* Header component - contains navigation and branding */}
+      <Header />
+      
+      {/* Main content area - we'll add more components here later */}
+      <main className="main-content">
+        {/* Hero and Education side by side */}
+        <div className="hero-education-container">
+          {/* Hero section - main landing area with photo and intro */}
+          <Hero />
+          
+          {/* Education section - university information with graduation photo */}
+          <Education />
+        </div>
+        
+        {/* TODO: Add Video Introduction section */}
+        {/* TODO: Add Projects section */}
+        {/* TODO: Add Experience section */}
+        {/* TODO: Add Contact section */}
+      </main>
+    </div>
   )
 }
 
+// Export the App component
 export default App
