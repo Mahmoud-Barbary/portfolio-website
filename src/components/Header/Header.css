@@ -114,7 +114,6 @@
   
   /* Remove default button styling */
   border: none;
-  border-radius: 0;
   
   /* Flexbox to center the icon */
   display: flex;
@@ -168,7 +167,7 @@
   object-position: center;
   
   /* Smooth transition for hover effects */
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   
   /* Display properly */
   display: block;

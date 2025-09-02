@@ -2,238 +2,134 @@
 
 /* Main education section container */
 .education {
-  /* Take up right portion of the layout */
-  width: 30%;
-  padding: 1rem 2rem 2rem 2rem;
-  
-  /* Dark background */
+  width: 30%; /* Takes up right portion of the layout */
+  padding: 2rem; /* Match hero section padding */
   background-color: var(--bg-primary);
-  
-  /* Match height with hero section */
-  min-height: 70vh;
-  
-  /* Align with hero section */
+  /* Let content determine height naturally */
+  min-height: 50vh; /* Minimum height for small screens */
   display: flex;
-  align-items: center;
+  align-items: center; /* Center content vertically */
+
 }
 
 /* Education content container */
 .education-content {
-  /* Vertical layout */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  
-  /* Full width */
   width: 100%;
-  
-  /* Gap between elements */
-  gap: 1.5rem;
+  gap: 1.5rem; /* Reduced gap for tighter spacing */
 }
 
-/* Education title styling */
+/* Education title */
 .education-title {
-  /* Montserrat font for headings */
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 1.3rem;
-  
-  /* Purple accent color */
+  font-size: 1.4rem;
   color: var(--accent-purple);
-  
-  /* Center text */
   text-align: center;
-  
-  /* Remove default margin */
-  margin: 0;
-}
-
-/* Universities container */
-.universities-container {
-  /* Horizontal layout for the two universities */
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  
-  /* Width to match graduation photo */
-  width: 100%;
-}
-
-/* University card styling */
-.university-card {
-  /* Center content */
-  text-align: center;
-  
-  /* Vertical alignment */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* University logo container */
-.university-logo {
-  /* Size for logo - match the image size */
-  width: 100px;
-  height: 100px;
-  
-  /* Center the logo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Logo image styling */
-.logo-image {
-  /* Much larger size for better visibility */
-  width: 100px;
-  height: 100px;
-  
-  /* No rounded corners */
-  border-radius: 0;
-  
-  /* No border */
-  border: none;
-  
-  /* Ensure logo covers area properly without cropping */
-  object-fit: contain;
-  object-position: center;
-  
-  /* No background - transparent */
-  background-color: transparent;
-  
-  /* Display properly */
-  display: block;
-}
-
-/* University name styling */
-.university-name {
-  /* Montserrat font for headings */
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  
-  /* White text color */
-  color: var(--text-primary);
-  
-  /* Remove default margin */
-  margin: 0;
-  
-  /* Line height for proper spacing */
-  line-height: 1.2;
-}
-
-/* GPA styling */
-.gpa {
-  /* Inter font for body text */
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  
-  /* Secondary text color */
-  color: var(--text-secondary);
-  
-  /* Remove default margin */
-  margin: 0;
+  margin: 0; /* Remove default margins */
 }
 
 /* Graduation photo container */
 .graduation-photo {
-  /* Center element */
-  flex: 0 0 auto;
-  
-  /* Center content */
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 /* Graduation photo image */
 .graduation-image {
-  /* Much larger width and height */
-  width: 300px;
-  height: 200px;
-  
-  /* Rectangular shape with slight rounding */
+  width: 100%; /* Take full width of container */
+  max-width: 280px; /* Maximum size on large screens */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 3/2; /* 3:2 aspect ratio */
   border-radius: 12px;
-  
-  /* Border for definition */
   border: 2px solid var(--border-color);
-  
-  /* Slightly zoomed out crop positioning - focus on lower part to show you sitting */
   object-fit: cover;
   object-position: center 70%;
-  
-  /* Smooth transition */
-  transition: all 0.3s ease;
-  
-  /* Display properly */
-  display: block;
+}
+
+/* Universities container */
+.universities-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem; /* Reduced gap between universities */
+}
+
+/* Individual university card */
+.university-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  gap: 0.5rem; /* Reduced gap within cards */
+}
+
+/* University logo container */
+.university-logo {
+  width: 15vw; /* Responsive width based on viewport */
+  height: 15vw; /* Square aspect ratio */
+  max-width: 100px; /* Maximum size on large screens */
+  max-height: 100px;
+}
+
+/* Logo image styling */
+.logo-image {
+  width: 100%; /* Fill container */
+  height: 100%; /* Fill container */
+  border-radius: 0;
+  border: none;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* University name */
+.university-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2; /* Tighter line height */
+}
+
+/* GPA text */
+.gpa {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
   .education {
-    /* Reduce padding on mobile */
-    padding: 2rem 1rem;
-  }
-  
-  .education-content {
-    /* Stack vertically on mobile */
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .university-card {
-    /* Full width on mobile */
-    width: 100%;
-  }
-  
-  .university-logo {
-    /* Smaller logo on mobile */
-    width: 60px;
-    height: 60px;
-  }
-  
-  .logo-placeholder {
-    /* Smaller placeholder on mobile */
-    width: 60px;
-    height: 60px;
-    font-size: 0.7rem;
+    padding: 0.3rem 1rem 1rem 1rem; /* Match hero mobile padding */
   }
   
   .graduation-image {
-    /* Smaller graduation photo on mobile but proportional */
-    width: 220px;
-    height: 150px;
+    max-width: 220px; /* Smaller max-width on mobile */
   }
   
-  .graduation-text {
-    /* Smaller text on mobile */
-    font-size: 0.8rem;
-  }
-  
-  .university-name {
-    /* Smaller font on mobile */
-    font-size: 1rem;
-  }
-  
-  .degree {
-    /* Smaller font on mobile */
-    font-size: 0.9rem;
-  }
-  
-  .gpa {
-    /* Smaller font on mobile */
-    font-size: 0.85rem;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 480px) {
   .education-content {
-    /* Reduce gap on very small screens */
-    gap: 1.5rem;
+    gap: 1rem; /* Even tighter spacing on mobile */
+  }
+  
+  .universities-container {
+    gap: 0.8rem;
+  }
+  
+  .university-logo {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
+  .logo-image {
+    width: 100%;
+    height: 100%;
   }
 }

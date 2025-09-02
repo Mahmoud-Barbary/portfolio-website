@@ -2,224 +2,120 @@
 
 /* Main hero section container */
 .hero {
-  /* Flexbox layout for side-by-side content */
+  /* Side by side layout with photo and text */
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-  /* Take up left portion of the layout */
-  width: 70%;
-  padding: 1rem 2rem 2rem 2rem;
-  
-  /* Minimum height for proper spacing */
-  min-height: 70vh;
-  
-  /* Dark background */
+  align-items: center; /* Center content vertically */
+  width: 70%; /* Takes up left portion */
+  padding: 2rem; /* Consistent padding */
   background-color: var(--bg-primary);
   
-  /* Remove top margin to close gap with header */
-  margin-top: 0;
+  /* Let content determine height naturally */
+  min-height: 50vh; /* Minimum height for small screens */
 }
 
 /* Left side: Photo container */
 .hero-photo {
-  /* Take up roughly 30% of the space - smaller for more text space */
-  flex: 0 0 30%;
-  
-  /* Center the photo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* Add some spacing from the text */
+  flex: 0 0 30%; /* Smaller photo area */
   margin-right: 3rem;
 }
 
 /* Profile photo styling */
 .profile-photo {
-  /* Square shape for the photo */
-  width: 300px;
-  height: 300px;
-  
-  /* Circular shape */
-  border-radius: 50%;
-  
-  /* Border for definition */
-  border: 2px solid var(--border-color);
-  
-  /* Ensure photo covers the entire area without distortion */
+  width: 25vw; /* Responsive width based on viewport */
+  height: 25vw; /* Square aspect ratio */
+  max-width: 300px; /* Maximum size on large screens */
+  max-height: 300px;
+  border-radius: 50%; /* Circular photo */
   object-fit: cover;
   object-position: center;
-  
-  /* Smooth transition for future hover effects */
-  transition: all 0.3s ease;
-  
-  /* Ensure photo displays properly */
-  display: block;
 }
 
 /* Right side: Content container */
 .hero-content {
-  /* Take up the remaining space */
   flex: 1;
-  
-  /* Add some spacing from the photo */
-  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to top */
 }
 
 /* Hero statement container */
 .hero-statement {
-  /* Montserrat font for headings */
-  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem; /* Reduced font size */
   font-weight: 700;
-  font-size: 2.6rem;
-  
-  /* Remove default margin */
-  margin: 0 0 1rem 0;
-  
-  /* Line height for proper spacing */
-  line-height: 1.1;
-  
-  /* Letter spacing for elegance */
-  letter-spacing: -0.02em;
-}
-
-/* Greeting text within statement */
-.hero-greeting {
-  /* Light gray text for subtlety */
-  color: var(--text-secondary);
-  
-  /* Same font as parent */
-  font-weight: 500;
-}
-
-/* Hero name within statement */
-.hero-name {
-  /* White text for prominence */
   color: var(--text-primary);
-  
-  /* Keep bold weight */
-  font-weight: 700;
+  margin-bottom: 0.5rem; /* Reduced margin */
+  line-height: 1.1; /* Tighter line height */
 }
 
 /* Hero title styling */
 .hero-title {
-  /* Montserrat font for headings */
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
-  
-  /* Accent purple color for emphasis */
-  color: var(--accent-purple);
-  
-  /* Letter spacing for elegance */
-  letter-spacing: -0.01em;
-  
-  /* Remove default margin */
-  margin: 0 0 1.5rem 0;
-  
-  /* Line height for proper spacing */
-  line-height: 1.2;
+  color: var(--accent-purple); /* Purple accent */
+  margin-bottom: 1rem; /* Reduced margin */
+  line-height: 1.2; /* Tighter line height */
 }
 
 /* Hero description container */
 .hero-description {
-  /* Reduce margin to save vertical space */
-  margin: 0 0 1.5rem 0;
-  
-  /* Even larger maximum width for much more horizontal space */
-  max-width: 800px;
-  
-  /* Space between lines - reduced gap */
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  
-  /* Flex grow to match height */
+  display: flex; /* Required for gap property to work */
+  flex-direction: column; /* Stack description lines vertically */
+  margin: 0; /* Remove all margins */
+  max-width: 800px; /* Increased max-width */
+  gap: 0.4rem; /* Reduced gap between lines */
   flex-grow: 1;
-  justify-content: center;
+  justify-content: flex-start; /* Align to top */
 }
 
 /* Individual description lines */
 .description-line {
-  /* Montserrat font to match the title */
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif; /* Matches title font */
+  font-size: 1.3rem; /* Slightly reduced font size */
   font-weight: 600;
-  line-height: 1.3;
-  
-  /* White text for prominence */
+  line-height: 1.2; /* Tighter line height */
   color: var(--text-primary);
-  
-  /* Letter spacing for elegance like the title */
   letter-spacing: -0.01em;
-  
-  /* Remove default margin */
-  margin: 0;
+  margin: 0; /* Remove default margins */
 }
 
 /* Highlighted text within description */
 .highlight {
-  /* Purple accent color for emphasis */
   color: var(--accent-purple);
   font-weight: 600;
 }
 
-
-
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
   .hero {
-    /* Stack content vertically on mobile */
-    flex-direction: column;
-    
-    /* Reduce padding */
-    padding: 2rem 1rem;
-    
-    /* Center content */
-    text-align: center;
-  }
-  
-  .hero-photo {
-    /* Full width on mobile */
-    flex: none;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-  
-  .profile-photo {
-    /* Smaller photo on mobile - keep circular */
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-  
-  .hero-content {
-    /* Full width on mobile */
-    flex: none;
-    width: 100%;
-    margin-left: 0;
+    padding: 0.3rem 1rem 1rem 1rem; /* Even tighter padding on mobile */
   }
   
   .hero-statement {
-    /* Smaller hero statement on mobile */
     font-size: 2rem;
+    margin-bottom: 0.3rem;
   }
   
   .hero-title {
-    /* Smaller font size on mobile */
-    font-size: 1.4rem;
-  }
-  
-  .hero-description {
-    /* Center text on mobile and adjust max width */
-    text-align: center;
-    max-width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
   }
   
   .description-line {
-    /* Smaller but still prominent on mobile */
     font-size: 1.1rem;
+    line-height: 1.15;
+  }
+  
+  .hero-description {
+    gap: 0.3rem;
+  }
+  
+  .hero-photo {
+    margin-right: 2rem;
+  }
+  
+  .profile-photo {
+    max-width: 200px;
+    max-height: 200px;
   }
 }
