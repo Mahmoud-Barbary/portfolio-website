@@ -90,7 +90,7 @@
 .university-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger to match body scale */
   color: var(--text-primary);
   margin: 0;
   line-height: 1.2; /* Tighter line height */
@@ -98,11 +98,12 @@
 
 /* GPA text */
 .gpa {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif; /* Match body font */
+  font-weight: 600; /* Match body weight */
+  font-size: 1.1rem; /* Match body scale */
   color: var(--text-secondary);
   margin: 0;
+  line-height: 1.2;
 }
 
 /* Responsive design for mobile devices */

@@ -1,0 +1,288 @@
+/* Experience component styles - Fixed Timeline Structure */
+
+.experience {
+  width: 100%;
+  background-color: var(--bg-primary);
+  padding: 4rem 2rem;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--accent-purple);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.experience-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  padding: 2rem 0;
+}
+
+/* Main timeline - just a line, no circles */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-purple);
+  transform: translateX(-50%);
+}
+
+.experience-items {
+  position: relative;
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 4rem;
+  min-height: 120px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Extending lines from main timeline */
+.marker-line {
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 2px;
+  background-color: var(--accent-purple);
+  transform: translateY(-50%);
+}
+
+/* Left extending line */
+.marker-line.left {
+  right: 100%;
+}
+
+/* Right extending line */
+.marker-line.right {
+  left: 100%;
+}
+
+/* Single element that changes from circle to square */
+.marker-element {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--bg-primary);
+  border: 3px solid var(--accent-purple);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Position elements at the end of the extending lines */
+.experience-item:nth-child(odd) .marker-element {
+  right: 120px; /* anchor right edge at end of left line */
+  transform-origin: right center; /* grow toward the left */
+}
+
+.experience-item:nth-child(even) .marker-element {
+  left: 120px; /* anchor left edge at end of right line */
+  transform-origin: left center; /* grow toward the right */
+}
+
+/* Date label directly below the circle */
+.marker-date {
+  position: absolute;
+  top: 100%;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+/* Event title below the date */
+.marker-title {
+  position: absolute;
+  top: 100%;
+  margin-top: 2.8rem; /* Further down from date */
+  font-family: 'Montserrat', sans-serif; /* Match hero description font */
+  font-weight: 600; /* Match hero description weight */
+  font-size: 0.9rem; /* Smaller font size */
+  color: var(--text-primary); /* Use primary text color like hero */
+  text-align: center;
+  max-width: 400px; /* Very wide to prevent wrapping */
+  line-height: 1.1; /* Tighter line height */
+  letter-spacing: -0.01em; /* Match hero description letter-spacing */
+  word-wrap: break-word;
+}
+
+
+
+
+/* Expanded state - becomes square with content */
+.marker-element.expanded {
+  width: 280px;
+  height: 280px;
+  border-radius: 16px;
+  border-color: var(--accent-purple-light, #a855f7);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  z-index: 10;
+  background-color: var(--bg-secondary);
+}
+
+/* Show content when expanded */
+.marker-content.visible {
+  opacity: 1;
+}
+
+/* Content inside expanded element */
+.marker-content {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s ease 0.1s; /* Delay content appearance */
+}
+
+.content-image {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Specific crop adjustment for Communication Liaison */
+.experience-item:nth-child(6) .content-image img {
+  object-position: center 5%; /* Crop much higher up to show person */
+}
+
+/* Specific crop adjustment for Dual Graduation */
+.experience-item:nth-child(7) .content-image img {
+  object-position: center 40%; /* Crop a little down */
+}
+
+.content-text h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem; /* Smaller title */
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.content-text .company {
+  font-family: 'Montserrat', sans-serif; /* Match other fonts */
+  font-weight: 600; /* Make it bold */
+  font-size: 0.9rem; /* Keep same small size */
+  line-height: 1.2; /* Match other fonts */
+  letter-spacing: -0.01em; /* Match other fonts */
+  color: var(--accent-purple);
+  margin: 0 0 0.8rem 0;
+  text-align: center;
+}
+
+.content-text .short-description {
+  font-family: 'Inter', sans-serif; /* Use Inter for body text */
+  font-weight: 600; /* Bolder body text */
+  font-size: 0.9rem; /* Larger font size */
+  line-height: 1.1; /* Much tighter line height to save space */
+  color: var(--text-secondary); /* Secondary text color */
+  margin: 0;
+  text-align: center;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .experience {
+    padding: 2rem 1rem;
+  }
+  
+  .experience-title {
+    font-size: 2rem;
+  }
+  
+  .experience-subtitle {
+    font-size: 1rem;
+  }
+  
+  .timeline-line {
+    display: none;
+  }
+  
+  .experience-item {
+    min-height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-marker {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  
+  .marker-line {
+    display: none;
+  }
+  
+  .experience-popup {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 320px;
+    margin: 1rem auto 0 auto;
+  }
+  
+  .experience-popup.left,
+  .experience-popup.right {
+    left: auto;
+    right: auto;
+  }
+}

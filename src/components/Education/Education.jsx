@@ -3,9 +3,9 @@
 
 import React from 'react';
 import './Education.css';
-import graduationPhoto from '../../assets/graduation.jpg';
-import euiLogo from '../../assets/EUI.png';
-import umnLogo from '../../assets/UMN.png';
+import graduationPhoto from '../../assets/education/graduation.jpg';
+import euiLogo from '../../assets/education/EUI.png';
+import umnLogo from '../../assets/education/UMN.png';
 
 // Main Education component function
 function Education() {

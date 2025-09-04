@@ -2,13 +2,14 @@
 
 /* Main header container */
 .header {
-  /* Flexbox layout to position name on left, social links on right */
-  display: flex;
-  justify-content: space-between;
+  /* Three-section layout: name | navigation | social */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  
   align-items: center;
   
-  /* Spacing and padding */
-  padding: 1.5rem 2rem;
+  /* Spacing and padding - reduced to decrease header height */
+  padding: 1rem 2rem;
   
   /* Dark background to match theme */
   background-color: var(--bg-primary);
@@ -22,7 +23,7 @@
 
 /* Left side containing the name */
 .header-left {
-  /* Flexbox for centering the name vertically */
+  /* Grid item 1: name */
   display: flex;
   align-items: center;
 }
@@ -94,6 +95,69 @@
 .name-button:hover .name {
   /* Subtle scale effect only */
   transform: scale(1.02);
+}
+
+/* Center: Navigation section - positioned in middle but slightly left */
+.header-nav {
+  /* Grid item 2: navigation - centered with slight left offset */
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-self: center; /* Center in grid area */
+  margin-left: -3rem; /* Slight left offset from center */
+}
+
+/* Navigation link buttons */
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem; /* Reduce spacing between icon and text */
+  
+  /* Remove default button styling */
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  
+  /* Cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Smooth transition for hover effects */
+  transition: all 0.2s ease;
+  
+  /* Transparent background - no background on hover */
+  background-color: transparent;
+}
+
+/* Navigation icon styling */
+.nav-icon {
+  width: 28px; /* Slightly larger icons */
+  height: 28px;
+  color: var(--text-primary); /* White by default */
+  transition: all 0.2s ease;
+}
+
+/* Navigation text styling - match hero description style */
+.nav-link span {
+  font-family: 'Montserrat', sans-serif; /* Match hero description font */
+  font-size: 1.1rem; /* Larger text */
+  font-weight: 600; /* Match hero description weight */
+  color: var(--text-primary); /* Use primary text color */
+  transition: all 0.2s ease;
+}
+
+/* Hover effects for navigation - only color and scale, no background */
+.nav-link:hover {
+  background-color: transparent; /* Ensure no background on hover */
+}
+
+.nav-link:hover .nav-icon {
+  color: var(--accent-purple); /* Purple on hover */
+  transform: scale(1.1); /* Slight size increase */
+}
+
+.nav-link:hover span {
+  color: var(--accent-purple); /* Purple on hover */
 }
 
 /* Right side containing social links and resume button */
@@ -277,5 +341,10 @@
   .resume-button {
     /* Smaller padding on mobile */
     padding: 0.5rem 1rem;
+  }
+  
+  .header-nav {
+    /* Hide navigation on mobile to save space */
+    display: none;
   }
 }

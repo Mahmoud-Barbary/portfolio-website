@@ -3,7 +3,7 @@
 
 import React from 'react';
 import './Hero.css';
-import profilePhoto from '../../assets/Mahmoud-Photo.png';
+import profilePhoto from '../../assets/profile/Mahmoud-Photo.png';
 
 // Main Hero component function
 function Hero() {
