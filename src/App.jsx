@@ -1,5 +1,5 @@
 // Main App component - this is the root component of our portfolio website
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header/Header.jsx'
 import Hero from './components/Hero/Hero.jsx'
@@ -11,15 +11,35 @@ import Software from './components/Software/Software.jsx'
 
 // Main App function component
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  // Initialize current page from URL hash (e.g., #software). Default to 'home'.
+  const getPageFromHash = () => (window.location.hash ? window.location.hash.slice(1) : 'home');
+  const [currentPage, setCurrentPage] = useState(getPageFromHash());
+
+  // Keep URL hash in sync and respect browser scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'auto';
+    }
+
+    const handleHashChange = () => {
+      setCurrentPage(getPageFromHash());
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Function to handle navigation
   const handleNavigation = (page) => {
-    setCurrentPage(page);
-    // Ensure we land at the top of the new page
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    });
+    if (page !== currentPage) {
+      setCurrentPage(page);
+      // Persist page in URL so refresh/back/forward stay on the same view
+      window.location.hash = `#${page}`;
+      // Optional: scroll to top on explicit navigation
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      });
+    }
   };
 
   // Render different pages based on current state
@@ -44,7 +64,7 @@ function App() {
             <IntroVideo
               title="A Video Introduction"
               subtitle="Who I am and my journey thus far."
-              videoUrl="https://www.youtube.com/embed/3nKEdhypIQw?modestbranding=1&rel=0&controls=1"
+              videoUrl="https://www.youtube.com/embed/3nKEdhypIQw?modestbranding=1&rel=0&controls=0&playsinline=1"
             />
 
             {/* Project highlights section */}

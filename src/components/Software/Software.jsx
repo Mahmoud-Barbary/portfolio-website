@@ -1,43 +1,17 @@
 // Software component for the portfolio website
 // This page displays all software development projects
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Software.css';
 
 // Placeholder software projects data
 const softwareProjects = [
   {
     id: 1,
-    title: 'Human Pose Controlled Robot Arm',
-    description: 'Real-time control of a Kinova Gen3 robotic arm using human pose estimation from a webcam via MediaPipe and ROS MoveIt.',
-    longDescription: 'This project demonstrates advanced robotics control by using computer vision to track human movements and translate them into robotic arm commands. Built with Python, ROS, and MediaPipe for real-time pose detection.',
-    tech: ['Python', 'ROS', 'MediaPipe', 'MoveIt', 'Computer Vision'],
-    highlights: [
-      'Real-time human pose detection',
-      'ROS MoveIt integration',
-      'Kinova Gen3 arm control',
-      'Computer vision pipeline'
-    ],
-    media: {
-      type: 'image',
-      src: 'https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Robot+Arm+Project',
-      alt: 'Human pose controlled robot arm'
-    },
-    links: [
-      {
-        label: 'GitHub',
-        href: 'https://github.com/Mahmoud-Barbary/human-pose-controlled-robot-arm',
-        kind: 'github'
-      }
-    ],
-    status: 'completed'
-  },
-  {
-    id: 2,
     title: 'Medhat - Medical Chatbot App',
-    description: 'AI-powered medical chatbot application designed to provide health information and assistance.',
-    longDescription: 'A comprehensive medical chatbot built with modern web technologies, featuring natural language processing and medical knowledge integration.',
-    tech: ['React', 'Node.js', 'AI/ML', 'Natural Language Processing'],
+    description: 'Diagnosis/symptom checker that guides users through rule-based NLP and medical knowledge.',
+    longDescription: 'A medical assistant focused on symptom checking and triage. Uses rule-based NLP and curated medical knowledge rather than heavy ML. Built with Python (Flask) and PostgreSQL.',
+    tech: ['Python', 'Flask', 'PostgreSQL', 'Natural Language Processing'],
     highlights: [
       'AI-powered responses',
       'Medical knowledge base',
@@ -45,8 +19,9 @@ const softwareProjects = [
       'Real-time chat functionality'
     ],
     media: {
-      type: 'image',
-      src: 'https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Medical+Chatbot',
+      type: 'video',
+      src: '/media/medhat.mp4',
+      poster: '/media/medhat.jpg',
       alt: 'Medhat medical chatbot interface'
     },
     links: [
@@ -59,11 +34,11 @@ const softwareProjects = [
     status: 'completed'
   },
   {
-    id: 3,
+    id: 2,
     title: 'Chess Game',
-    description: 'Complete chess game implementation built from scratch with full game logic and user interface.',
-    longDescription: 'A fully functional chess game featuring all standard chess rules, move validation, check/checkmate detection, and an intuitive user interface.',
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
+    description: 'Complete chess game implementation with PvP and adjustable-difficulty PvE (AI).',
+    longDescription: 'A fully functional chess game featuring all standard chess rules, move validation, check/checkmate detection, and an intuitive user interface. Supports local PvP and an AI opponent with selectable difficulty levels.',
+    tech: ['C++', 'SFML', 'Git'],
     highlights: [
       'Complete chess rules implementation',
       'Move validation and game state tracking',
@@ -71,8 +46,9 @@ const softwareProjects = [
       'Responsive user interface'
     ],
     media: {
-      type: 'image',
-      src: 'https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Chess+Game',
+      type: 'video',
+      src: '/media/chess.mp4',
+      poster: '/media/chess.jpg',
       alt: 'Chess game interface'
     },
     links: [
@@ -85,11 +61,11 @@ const softwareProjects = [
     status: 'completed'
   },
   {
-    id: 4,
+    id: 3,
     title: 'Solitaire Game',
     description: 'Classic solitaire card game implementation with smooth animations and intuitive controls.',
     longDescription: 'A polished solitaire game featuring the classic Klondike variant with smooth card animations, drag-and-drop functionality, and scoring system.',
-    tech: ['JavaScript', 'HTML5', 'CSS3', 'Canvas API'],
+    tech: ['C++', 'SFML', 'Git'],
     highlights: [
       'Smooth card animations',
       'Drag and drop functionality',
@@ -97,8 +73,9 @@ const softwareProjects = [
       'Score tracking system'
     ],
     media: {
-      type: 'image',
-      src: 'https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Solitaire+Game',
+      type: 'video',
+      src: '/media/solitaire.mp4',
+      poster: '/media/solitaire.jpg',
       alt: 'Solitaire game interface'
     },
     links: [
@@ -109,11 +86,171 @@ const softwareProjects = [
       }
     ],
     status: 'completed'
+  },
+  {
+    id: 4,
+    title: 'Human Pose Controlled Robot Arm',
+    description: 'Real-time control of a Kinova Gen3 robotic arm using human pose estimation from a webcam via MediaPipe and ROS MoveIt.',
+    longDescription: 'This project demonstrates advanced robotics control by using computer vision to track human movements and translate them into robotic arm commands. Built with Python, ROS, and MediaPipe for real-time pose detection.',
+    tech: ['Python', 'ROS', 'MediaPipe', 'MoveIt', 'Computer Vision'],
+    highlights: [
+      'Real-time human pose detection',
+      'ROS MoveIt integration',
+      'Kinova Gen3 arm control',
+      'Computer vision pipeline'
+    ],
+    media: {
+      type: 'video',
+      src: '/media/robot-arm.mp4',
+      poster: '/media/robot-arm.jpg',
+      alt: 'Human pose controlled robot arm'
+    },
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Mahmoud-Barbary/human-pose-controlled-robot-arm',
+        kind: 'github'
+      }
+    ],
+    status: 'completed'
+  },
+  {
+    id: 5,
+    title: 'Delivery Coordination System',
+    description: 'End-to-end delivery management platform with full UML documentation, UI mockups, and Java pattern implementations.',
+    longDescription: 'Hermes Express: an academic system design project covering use cases, component/class diagrams, UI/UX, and Java implementations of core patterns (Singleton, Strategy, Observer, etc.).',
+    tech: ['Java', 'UML', 'Design Patterns', 'Figma', 'Jira'],
+    highlights: [
+      'Comprehensive architecture (use case → component → class)',
+      'Pattern implementations (Singleton, Strategy, Observer...)',
+      'Desktop and mobile UI mockups in Figma',
+      'Deployment and documentation reports'
+    ],
+    media: {
+      type: 'video',
+      src: '/media/delivery-system.mp4',
+      poster: '/media/delivery-system.jpg',
+      alt: 'Delivery coordination system overview'
+    },
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Mahmoud-Barbary/delivery-coordination-system',
+        kind: 'github'
+      }
+    ],
+    status: 'completed'
+  },
+  {
+    id: 6,
+    title: 'Foo-D-Mah',
+    description: 'A mobile application that provides personalized dining recommendations based on dietary needs, restrictions, and real-time data.',
+    longDescription: 'A mobile application that provides personalized dining recommendations based on dietary needs, restrictions, and real-time data.',
+    tech: ['Figma', 'Miro', 'UI/UX'],
+    highlights: [
+      'Personalized recommendations based on diet & allergies',
+      'User reviews and social integration',
+      'Swipe-based restaurant discovery',
+      'Dynamic and intuitive user interface'
+    ],
+    media: {
+      type: 'video',
+      src: '/media/foodmah.mp4',
+      poster: '/media/foodmah.jpg',
+      alt: 'Foo-D-Mah demo reel'
+    },
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Mahmoud-Barbary/Foo-D-Mah-Food-Recommendation-App',
+        kind: 'github'
+      },
+      {
+        label: 'Figma Prototype',
+        href: 'https://www.figma.com/proto/vQjtalb6AOn9q6bJFsGARj/Milestone-2?node-id=17-697&p=f&t=jAfTs9GUlXioLEQR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=17%3A697',
+        kind: 'github'
+      }
+    ],
+    status: 'completed'
+  },
+  {
+    id: 7,
+    title: 'Steam Game Tag Classifier',
+    description: 'Machine learning project comparing GMM and Neural Network models for multi-label classification of Steam video game tags using text embeddings.',
+    longDescription: 'An exploratory project that predicts Steam game tags (e.g., "Action," "RPG," "Indie") based on game titles and descriptions. Implemented two distinct ML architectures: Gaussian Mixture Model (GMM) and multi-layer Neural Network, achieving 48.23% top-1 accuracy with the NN model on a dataset of 73,394 games.',
+    tech: ['Python', 'Machine Learning', 'Neural Networks', 'GMM'],
+    highlights: [
+      'Multi-label classification on 73,394 Steam games',
+      'Text embeddings using sentence transformers',
+      'Neural Network achieved 48.23% top-1 accuracy',
+      'Comprehensive model comparison and analysis'
+    ],
+    media: {
+      type: 'image',
+      src: '/media/steam-classifier.jpg',
+      alt: 'Steam Game Tag Classifier project overview'
+    },
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Mahmoud-Barbary/Steam-Game-Tag-Classifier',
+        kind: 'github'
+      }
+    ],
+    status: 'completed'
   }
 ];
 
 // Main Software component function
 function Software() {
+  const videoRefs = useRef({});
+
+  useEffect(() => {
+    // Ensure videos show first frame immediately
+    Object.values(videoRefs.current).forEach((video) => {
+      if (video) {
+        video.currentTime = 0.1; // Seek to first frame
+        video.load(); // Force load
+      }
+    });
+
+    // Create intersection observer to handle video autoplay
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            // Video is visible - play it
+            video.play().catch(console.error);
+          } else {
+            // Video is not visible - pause it
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of video is visible
+        rootMargin: '0px 0px -10% 0px' // Start playing when video is 10% from bottom of viewport
+      }
+    );
+
+    // Observe all video elements
+    Object.values(videoRefs.current).forEach((video) => {
+      if (video) {
+        observer.observe(video);
+      }
+    });
+
+    // Cleanup
+    return () => {
+      Object.values(videoRefs.current).forEach((video) => {
+        if (video) {
+          observer.unobserve(video);
+        }
+      });
+    };
+  }, []);
+
   return (
     <section className="software">
       {/* Page header */}
@@ -128,20 +265,23 @@ function Software() {
           <div key={project.id} className="software-project">
             {/* Project media */}
             <div className="project-media">
-              {project.media.type === 'image' ? (
+              {project.media.type === 'video' ? (
+                <video
+                  ref={(el) => (videoRefs.current[project.id] = el)}
+                  className="project-video"
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  poster={project.media.poster}
+                >
+                  <source src={project.media.src} type="video/mp4" />
+                </video>
+              ) : (
                 <img
                   src={project.media.src}
                   alt={project.media.alt}
                   className="project-image"
-                />
-              ) : (
-                <iframe
-                  src={project.media.src}
-                  title={project.media.alt}
-                  className="project-video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
                 />
               )}
               {project.status === 'in-progress' && (
