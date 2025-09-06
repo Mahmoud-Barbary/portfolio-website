@@ -5,6 +5,7 @@ import React, { useRef, useEffect } from 'react';
 import './Games.css';
 
 // Games projects data
+const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
 const gamesProjects = [
   {
     id: 1,
@@ -20,8 +21,7 @@ const gamesProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/project-clash.mp4',
-      poster: '/media/project-clash.jpg',
+      src: withBase('media/project-clash.mp4'),
       alt: 'Project Clash 2D fighting game development'
     },
     links: [],
