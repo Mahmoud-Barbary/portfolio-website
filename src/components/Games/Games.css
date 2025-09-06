@@ -1,0 +1,352 @@
+/* Games component styles - Dark Theme */
+
+.games {
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+/* Page header */
+.games-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.games-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--accent-purple);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.games-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Projects container */
+.games-projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Reference section */
+.games-reference {
+  max-width: 800px;
+  margin: 4rem auto 3rem auto;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.reference-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.reference-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.reference-description a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.reference-description a:hover {
+  text-decoration: underline;
+}
+
+/* Individual project - same width as software */
+.games-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.games-project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+  border-color: var(--accent-purple);
+}
+
+/* Project media container */
+.project-media {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.project-image,
+.project-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+/* Specific styling for mobile app videos to handle black bars */
+.project-video[src*="medhat"],
+.project-video[src*="foodmah"] {
+  object-fit: cover;
+  object-position: center center;
+  /* Crop the video to focus on the mobile screen content */
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--accent-purple);
+  color: var(--bg-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Project content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.project-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Project note for cross-references */
+.project-note {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--accent-purple);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.project-note p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent-purple);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Technology stack */
+.project-tech h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0 0 0.8rem 0;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-tag {
+  background-color: var(--accent-purple);
+  color: var(--bg-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Project highlights */
+.project-highlights h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0 0 0.8rem 0;
+}
+
+.project-highlights .highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid; /* Use grid for 2x2 layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 0.5rem 1rem; /* Gap between items */
+}
+
+.project-highlights .highlight-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.project-highlights .highlight-item::before {
+  content: '•';
+  color: var(--accent-purple);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.project-link.github {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.project-link.github:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.project-link.demo {
+  background-color: var(--accent-purple);
+  color: var(--bg-primary);
+}
+
+.project-link.demo:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .games {
+    padding: 2rem 1rem;
+  }
+
+  .games-title {
+    font-size: 2.5rem;
+  }
+
+  .games-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .games-project {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .project-media {
+    height: 250px;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-highlights .highlights-list {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  .project-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-title {
+    font-size: 2rem;
+  }
+
+  .games-subtitle {
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

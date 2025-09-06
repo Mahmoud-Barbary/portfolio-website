@@ -8,6 +8,9 @@ import IntroVideo from './components/IntroVideo/IntroVideo.jsx'
 import Highlights from './components/Highlights/Highlights.jsx'
 import Experience from './components/Experience/Experience.jsx'
 import Software from './components/Software/Software.jsx'
+import Video from './components/Video/Video.jsx'
+import Games from './components/Games/Games.jsx'
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx'
 
 // Main App function component
 function App() {
@@ -47,6 +50,10 @@ function App() {
     switch (currentPage) {
       case 'software':
         return <Software />;
+      case 'video':
+        return <Video />;
+      case 'games':
+        return <Games />;
       case 'home':
       default:
         return (
@@ -79,13 +86,15 @@ function App() {
 
   return (
     // Main app container
-    <div className="App">
-      {/* Header component - contains navigation and branding */}
-      <Header onNavigate={handleNavigation} />
-      
-      {/* Render current page */}
-      {renderPage()}
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        {/* Header component - contains navigation and branding */}
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
+        
+        {/* Render current page */}
+        {renderPage()}
+      </div>
+    </ErrorBoundary>
   )
 }
 

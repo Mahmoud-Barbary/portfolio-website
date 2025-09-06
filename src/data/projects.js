@@ -4,32 +4,194 @@
 export const projects = {
   software: [
     {
-      id: 'portfolio-website',
-      title: 'Portfolio Website',
-      description: 'Full-stack portfolio built with React, featuring responsive design and modern UI.',
-      longDescription: 'A modern, responsive portfolio website showcasing my work and skills. Built with React, Vite, and CSS Grid/Flexbox for optimal performance and user experience.',
+      id: 'medhat-medical-chatbot',
+      title: 'Medhat - Medical Chatbot App',
+      description: 'AI-powered medical chatbot application designed to provide diagnosis and symptom checking based on rule-based Natural Language Processing.',
+      longDescription: 'A comprehensive medical chatbot built with Python, Flask, and PostgreSQL, featuring rule-based natural language processing and medical knowledge integration for diagnosis and symptom checking.',
       highlights: [
-        'React + Vite for fast development',
-        'Responsive design with CSS Grid',
-        'Dark theme with purple accents',
-        'Optimized for accessibility'
+        'AI-powered responses',
+        'Medical knowledge base',
+        'User-friendly interface',
+        'Real-time chat functionality'
       ],
-      tech: ['React', 'JavaScript', 'CSS3', 'Vite'],
+      tech: ['Python', 'Flask', 'PostgreSQL', 'Natural Language Processing'],
       media: {
-        type: 'image',
-        src: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Portfolio+Website',
-        alt: 'Portfolio website screenshot'
+        type: 'video',
+        src: '/media/medhat.mp4',
+        poster: '/media/medhat.jpg',
+        alt: 'Medhat medical chatbot interface'
       },
       links: [
         {
           label: 'GitHub',
-          href: 'https://github.com/your-username/portfolio-website',
+          href: 'https://github.com/Ayman-Marghani/Medhat',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'chess-game',
+      title: 'Chess Game',
+      description: 'Complete chess game implementation with PvP and adjustable-difficulty PvE (AI).',
+      longDescription: 'A fully functional chess game featuring all standard chess rules, move validation, check/checkmate detection, and an intuitive user interface. Supports local PvP and an AI opponent with selectable difficulty levels.',
+      highlights: [
+        'Complete chess rules implementation',
+        'Move validation and game state tracking',
+        'Check and checkmate detection',
+        'Responsive user interface'
+      ],
+      tech: ['C++', 'SFML', 'Git'],
+      media: {
+        type: 'video',
+        src: '/media/chess.mp4',
+        poster: '/media/chess.jpg',
+        alt: 'Chess game interface'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Ayman-Marghani/Chess-Game',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'solitaire-game',
+      title: 'Solitaire Game',
+      description: 'Classic solitaire card game implementation with smooth animations and intuitive controls.',
+      longDescription: 'A polished solitaire game featuring the classic Klondike variant with smooth card animations, drag-and-drop functionality, and scoring system.',
+      highlights: [
+        'Smooth card animations',
+        'Drag and drop functionality',
+        'Auto-complete detection',
+        'Score tracking system'
+      ],
+      tech: ['C++', 'SFML', 'Git'],
+      media: {
+        type: 'video',
+        src: '/media/solitaire.mp4',
+        poster: '/media/solitaire.jpg',
+        alt: 'Solitaire game interface'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/AhmedWaleed9/Solitaire',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'robot-arm',
+      title: 'Human Pose Controlled Robot Arm',
+      description: 'Real-time control of a Kinova Gen3 robotic arm using human pose estimation from a webcam via MediaPipe and ROS MoveIt.',
+      longDescription: 'This project demonstrates advanced robotics control by using computer vision to track human movements and translate them into robotic arm commands. Built with Python, ROS, and MediaPipe for real-time pose detection.',
+      highlights: [
+        'Real-time human pose detection',
+        'ROS MoveIt integration',
+        'Kinova Gen3 arm control',
+        'Computer vision pipeline'
+      ],
+      tech: ['Python', 'ROS', 'MediaPipe', 'MoveIt', 'Computer Vision'],
+      media: {
+        type: 'video',
+        src: '/media/robot-arm.mp4',
+        poster: '/media/robot-arm.jpg',
+        alt: 'Human pose controlled robot arm'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Mahmoud-Barbary/human-pose-controlled-robot-arm',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'delivery-system',
+      title: 'Delivery Coordination System',
+      description: 'End-to-end delivery management platform with full UML documentation, UI mockups, and Java pattern implementations.',
+      longDescription: 'Hermes Express: an academic system design project covering use cases, component/class diagrams, UI/UX, and Java implementations of core patterns (Singleton, Strategy, Observer, etc.).',
+      highlights: [
+        'Comprehensive architecture (use case → component → class)',
+        'Pattern implementations (Singleton, Strategy, Observer...)',
+        'Desktop and mobile UI mockups in Figma',
+        'Deployment and documentation reports'
+      ],
+      tech: ['Java', 'UML', 'Design Patterns', 'Figma', 'Jira'],
+      media: {
+        type: 'video',
+        src: '/media/delivery-system.mp4',
+        poster: '/media/delivery-system.jpg',
+        alt: 'Delivery coordination system overview'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Mahmoud-Barbary/delivery-coordination-system',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'foodmah',
+      title: 'Foo-D-Mah',
+      description: 'A mobile application that provides personalized dining recommendations based on dietary needs, restrictions, and real-time data.',
+      longDescription: 'A mobile application that provides personalized dining recommendations based on dietary needs, restrictions, and real-time data.',
+      highlights: [
+        'Personalized recommendations based on diet & allergies',
+        'User reviews and social integration',
+        'Swipe-based restaurant discovery',
+        'Dynamic and intuitive user interface'
+      ],
+      tech: ['Figma', 'Miro', 'UI/UX'],
+      media: {
+        type: 'video',
+        src: '/media/foodmah.mp4',
+        poster: '/media/foodmah.jpg',
+        alt: 'Foo-D-Mah demo reel'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Mahmoud-Barbary/Foo-D-Mah-Food-Recommendation-App',
           kind: 'github'
         },
         {
-          label: 'Live Demo',
-          href: '#',
-          kind: 'demo'
+          label: 'Figma Prototype',
+          href: 'https://www.figma.com/proto/vQjtalb6AOn9q6bJFsGARj/Milestone-2?node-id=17-697&p=f&t=jAfTs9GUlXioLEQR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=17%3A697',
+          kind: 'github'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'steam-classifier',
+      title: 'Steam Game Tag Classifier',
+      description: 'Machine learning project comparing GMM and Neural Network models for multi-label classification of Steam video game tags using text embeddings.',
+      longDescription: 'An exploratory project that predicts Steam game tags (e.g., "Action," "RPG," "Indie") based on game titles and descriptions. Implemented two distinct ML architectures: Gaussian Mixture Model (GMM) and multi-layer Neural Network, achieving 48.23% top-1 accuracy with the NN model on a dataset of 73,394 games.',
+      highlights: [
+        'Multi-label classification on 73,394 Steam games',
+        'Text embeddings using sentence transformers',
+        'Neural Network achieved 48.23% top-1 accuracy',
+        'Comprehensive model comparison and analysis'
+      ],
+      tech: ['Python', 'Machine Learning', 'Neural Networks', 'GMM'],
+      media: {
+        type: 'image',
+        src: '/media/steam-classifier.jpg',
+        alt: 'Steam Game Tag Classifier project overview'
+      },
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/Mahmoud-Barbary/Steam-Game-Tag-Classifier',
+          kind: 'github'
         }
       ],
       status: 'completed'
@@ -38,26 +200,104 @@ export const projects = {
   
   video: [
     {
-      id: 'intro-video',
-      title: 'Introduction Video',
-      description: 'Personal introduction showcasing my background and passion for technology.',
-      longDescription: 'A brief video introduction that gives visitors a personal glimpse into who I am, my background, and what drives me in technology and creativity.',
+      id: 'real-estate-campaign',
+      title: 'Real Estate Marketing Campaign',
+      description: 'Professional promotional videos showcasing a real estate agent\'s expertise through client consultations, property showcases, and dynamic visual storytelling.',
+      longDescription: 'A comprehensive video marketing campaign for a real estate agent, featuring two 5-minute professional videos. Transformed raw client consultation footage into engaging promotional content through extensive editing, creative cuts, custom B-roll integration, dynamic text animations, and professional color grading. The project required multiple days of intensive editing to create compelling narratives that effectively communicate the agent\'s expertise and services.',
       highlights: [
-        'Personal storytelling',
-        'Professional presentation',
-        'Clear communication',
-        'Engaging content'
+        'Multi-day intensive editing process',
+        'Creative narrative structuring',
+        'Custom B-roll integration',
+        'Professional color grading and text animations'
       ],
-      tech: ['Video Editing', 'Storytelling', 'Presentation'],
       media: {
-        type: 'youtube',
-        src: 'https://www.youtube.com/embed/3nKEdhypIQw',
-        alt: 'Introduction video thumbnail'
+        type: 'video',
+        src: '/media/real-estate-campaign.mp4',
+        poster: '/media/real-estate-campaign.jpg',
+        alt: 'Real Estate Marketing Campaign video'
       },
       links: [
         {
-          label: 'Watch Video',
-          href: 'https://youtu.be/3nKEdhypIQw',
+          label: 'Watch Full Video',
+          href: '#', // Replace with your Google Drive or YouTube link
+          kind: 'video'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'medical-testimonials',
+      title: 'Medical Clinic Advertisements',
+      description: 'This was a large-scale project centered on creating a testimonial campaign for a medical clinic introducing new treatment options. I was responsible for editing over 25 patient interviews. My process involved developing a custom branding text design and applying consistent color grading and audio enhancement to produce a series of high-quality, authentic videos, including compilations formatted for social media.',
+      longDescription: 'Produced a large-scale testimonial campaign for a medical clinic introducing new treatment options. Edited over 25 patient interviews into compelling promotional content, including individual testimonials and compilation videos for vertical social media formats. Developed custom branding elements, text designs, and maintained patient confidentiality while creating engaging narratives. Applied professional color grading and audio enhancement to ensure consistent, high-quality output across all deliverables.',
+      highlights: [
+        'Edited over 25 patient interviews',
+        'Custom branding and text design',
+        'Social media format optimization',
+        'Professional color grading and audio enhancement'
+      ],
+      media: {
+        type: 'video',
+        src: '/media/medical-testimonials.mp4',
+        poster: '/media/medical-testimonials.jpg',
+        alt: 'Medical Clinic Patient Testimonials video'
+      },
+      links: [
+        {
+          label: 'Watch Full Video',
+          href: '#', // Replace with your Google Drive or YouTube link
+          kind: 'video'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'ieee-promotion',
+      title: 'IEEE Event Promotion',
+      description: 'For a major international event like the IEEE Congress, the goal was to create a short, energetic promo that could grab attention instantly on social media. I edited this video to maximize impact, using fast-paced cuts and engaging effects to convey the scale and excitement of the event.',
+      longDescription: 'Created promotional content for the IEEE North Africa Student and Young Professional Congress, a major international event. Delivered a concise 47-second promotional video for university social media channels, leveraging advanced editing techniques to create maximum impact within a short format.',
+      highlights: [
+        'Short-form content optimization',
+        'Fast-paced editing techniques',
+        'Social media engagement focus',
+        'International event promotion'
+      ],
+      media: {
+        type: 'video',
+        src: '/media/ieee-promotion.mp4',
+        poster: '/media/ieee-promotion.jpg',
+        alt: 'IEEE Event Promotion video'
+      },
+      links: [
+        {
+          label: 'Watch Full Video',
+          href: '#', // Replace with your Google Drive or YouTube link
+          kind: 'video'
+        }
+      ],
+      status: 'completed'
+    },
+    {
+      id: 'video-essays',
+      title: 'YouTube Channel & Creative Content',
+      description: 'My personal YouTube channel is where I experiment with different formats and push my creative video skills. Across almost 50 videos, I\'ve made everything from energetic gaming content to in-depth video essays, highlighted by a 33-minute highly-produced critique and several other videos that have earned over 2,000 views.',
+      longDescription: 'Developed a personal creative channel producing over 45 videos, including fast-paced gaming content, scripted critiques, and in-depth video essays. Notable achievements include three videos exceeding 1,000 views and a comprehensive 33-minute critique that demonstrates advanced storytelling and editing skills. This ongoing project showcases iterative improvement in video production, narrative structure, and audience engagement.',
+      highlights: [
+        'Over 45 videos produced',
+        'Multiple formats and styles',
+        '33-minute comprehensive critique',
+        'Videos exceeding 2,000 views'
+      ],
+      media: {
+        type: 'video',
+        src: '/media/video-essays.mp4',
+        poster: '/media/video-essays.jpg',
+        alt: 'Video Essays & Creative Content compilation'
+      },
+      links: [
+        {
+          label: 'Watch Full Video',
+          href: '#', // Replace with your Google Drive or YouTube link
           kind: 'video'
         }
       ],
@@ -67,29 +307,24 @@ export const projects = {
   
   games: [
     {
-      id: 'platformer-prototype',
-      title: 'Platformer Prototype',
-      description: '2D platformer game in development using Godot engine.',
-      longDescription: 'A 2D platformer game prototype currently in development. Features smooth movement mechanics, level design, and game feel optimization.',
+      id: 'project-clash',
+      title: 'Project Clash',
+      description: 'A strategic 2D sword-fighting game combining turn-based elements with real-time mechanics. A continuous learning project with potential for publication.',
+      longDescription: 'Project Clash is an ambitious 2D fighting game that blends strategic turn-based decision-making with real-time combat mechanics. Built from scratch using industry-standard design patterns, this project serves as both a learning platform and a potential commercial product. The game emphasizes clean, modular code architecture and comprehensive documentation.',
       highlights: [
-        '2D platformer mechanics',
-        'Godot engine development',
-        'Level design principles',
-        'Game feel optimization'
+        'Building logic and finite state machines from scratch',
+        'Emphasizing clean, modular and well-documented code',
+        'Learning art, animation and game engine workflows',
+        'Utilizing multiple industry-standard design patterns'
       ],
-      tech: ['Godot', 'GDScript', 'Game Design', '2D Art'],
+      tech: ['Godot', 'GDScript', 'Game Design', 'Pixel Art', 'Git'],
       media: {
-        type: 'image',
-        src: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Game+Prototype',
-        alt: 'Platformer game screenshot'
+        type: 'video',
+        src: '/media/project-clash.mp4',
+        poster: '/media/project-clash.jpg',
+        alt: 'Project Clash 2D fighting game development'
       },
-      links: [
-        {
-          label: 'Devlog',
-          href: '#',
-          kind: 'doc'
-        }
-      ],
+      links: [],
       status: 'in-progress'
     }
   ]
@@ -99,7 +334,7 @@ export const projects = {
 export const getHighlights = () => {
   return {
     software: projects.software[0],
-    video: projects.video[0],
+    video: projects.video[0], // Real Estate Marketing Campaign
     games: projects.games[0]
   };
 };

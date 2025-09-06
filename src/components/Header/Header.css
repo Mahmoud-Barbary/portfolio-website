@@ -160,6 +160,16 @@
   color: var(--accent-purple); /* Purple on hover */
 }
 
+/* Active state for navigation - purple color and pushed up icon */
+.nav-link.active .nav-icon {
+  color: var(--accent-purple); /* Purple when active */
+  transform: translateY(-2px); /* Push icon up slightly */
+}
+
+.nav-link.active span {
+  color: var(--accent-purple); /* Purple when active */
+}
+
 /* Right side containing social links and resume button */
 .header-right {
   /* Flexbox to arrange items horizontally */

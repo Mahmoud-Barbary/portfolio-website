@@ -53,6 +53,19 @@ function Highlights({ onNavigate }) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
+                ) : project.media.type === 'video' ? (
+                  <video
+                    src={project.media.src}
+                    poster={project.media.poster}
+                    className="thumbnail-video"
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    autoPlay
+                  >
+                    <source src={project.media.src} type="video/mp4" />
+                  </video>
                 ) : (
                   <img
                     src={project.media.src}

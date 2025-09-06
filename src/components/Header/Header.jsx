@@ -8,13 +8,11 @@ import linkedinFillIcon from '../../assets/social/linkedin fill.png';
 import githubIcon from '../../assets/social/github.png';
 
 // Main Header component function
-function Header({ onNavigate }) {
-  // Function to handle resume download
-  // This will be called when the resume button is clicked
-  const handleResumeDownload = () => {
-    // TODO: Add actual resume file and download logic
-    console.log('Resume download clicked');
-    // In the future, this could open a PDF or trigger a download
+function Header({ onNavigate, currentPage }) {
+  // Function to handle resume preview
+  // Opens resume PDF in a new tab for preview/download
+  const handleResumePreview = () => {
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
   };
 
   // Function to handle social link clicks
@@ -60,7 +58,7 @@ function Header({ onNavigate }) {
       {/* Center: Navigation links */}
       <nav className="header-nav">
         <button
-          className="nav-link"
+          className={`nav-link ${currentPage === 'software' ? 'active' : ''}`}
           onClick={() => handleNavClick('software')}
           aria-label="View Software Projects"
         >
@@ -71,7 +69,7 @@ function Header({ onNavigate }) {
         </button>
 
         <button
-          className="nav-link"
+          className={`nav-link ${currentPage === 'video' ? 'active' : ''}`}
           onClick={() => handleNavClick('video')}
           aria-label="View Video Projects"
         >
@@ -82,7 +80,7 @@ function Header({ onNavigate }) {
         </button>
 
         <button
-          className="nav-link"
+          className={`nav-link ${currentPage === 'games' ? 'active' : ''}`}
           onClick={() => handleNavClick('games')}
           aria-label="View Game Projects"
         >
@@ -129,8 +127,8 @@ function Header({ onNavigate }) {
         {/* Resume download button */}
         <button
           className="resume-button"
-          onClick={handleResumeDownload}
-          aria-label="Download Resume"
+          onClick={handleResumePreview}
+          aria-label="View Resume"
         >
           <span>Résumé</span>
           <span className="download-icon">↓</span>

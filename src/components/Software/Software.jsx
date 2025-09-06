@@ -27,7 +27,7 @@ const softwareProjects = [
     links: [
       {
         label: 'GitHub',
-        href: '#',
+        href: 'https://github.com/Ayman-Marghani/Medhat',
         kind: 'github'
       }
     ],
@@ -54,7 +54,7 @@ const softwareProjects = [
     links: [
       {
         label: 'GitHub',
-        href: '#',
+        href: 'https://github.com/Ayman-Marghani/Chess-Game',
         kind: 'github'
       }
     ],
@@ -81,7 +81,7 @@ const softwareProjects = [
     links: [
       {
         label: 'GitHub',
-        href: '#',
+        href: 'https://github.com/AhmedWaleed9/Solitaire',
         kind: 'github'
       }
     ],
@@ -265,23 +265,25 @@ function Software() {
           <div key={project.id} className="software-project">
             {/* Project media */}
             <div className="project-media">
-              {project.media.type === 'video' ? (
-                <video
-                  ref={(el) => (videoRefs.current[project.id] = el)}
-                  className="project-video"
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  poster={project.media.poster}
-                >
-                  <source src={project.media.src} type="video/mp4" />
-                </video>
+                     {project.media.type === 'video' ? (
+                       <video
+                         ref={(el) => (videoRefs.current[project.id] = el)}
+                         className="project-video"
+                         muted
+                         loop
+                         playsInline
+                         preload="metadata"
+                         loading="lazy"
+                         poster={project.media.poster}
+                       >
+                         <source src={project.media.src} type="video/mp4" />
+                       </video>
               ) : (
                 <img
                   src={project.media.src}
                   alt={project.media.alt}
                   className="project-image"
+                  loading="lazy"
                 />
               )}
               {project.status === 'in-progress' && (
