@@ -12,7 +12,8 @@ function Header({ onNavigate, currentPage }) {
   // Function to handle resume preview
   // Opens resume PDF in a new tab for preview/download
   const handleResumePreview = () => {
-    window.open('./resume.pdf', '_blank', 'noopener,noreferrer');
+    const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
+    window.open(resumeUrl, '_blank', 'noopener,noreferrer');
   };
 
   // Function to handle social link clicks
