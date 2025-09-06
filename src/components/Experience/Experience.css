@@ -30,6 +30,15 @@
   letter-spacing: -0.01em;
 }
 
+.experience-instruction {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
 .timeline-container {
   position: relative;
   max-width: 1000px;

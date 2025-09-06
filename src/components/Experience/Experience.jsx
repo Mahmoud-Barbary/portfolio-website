@@ -88,7 +88,8 @@ function Experience() {
       {/* Section title */}
       <div className="experience-header">
         <h2 className="experience-title">Experience</h2>
-                       <p className="experience-subtitle">My academic and professional path through the years</p>
+        <p className="experience-subtitle">My academic and professional path through the years</p>
+        <p className="experience-instruction">(Hover over a circle for more details)</p>
       </div>
 
       {/* Timeline container */}
