@@ -1,6 +1,6 @@
-Contact: mailto:your-email@example.com
+Contact: mailto:mahmoud.barbary@example.com
 Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://yourdomain.com/pgp-key.txt
+Encryption: https://mahmoud-barbary.github.io/portfolio-website/pgp-key.txt
 Preferred-Languages: en
-Canonical: https://yourdomain.com/.well-known/security.txt
-Policy: https://yourdomain.com/security-policy
+Canonical: https://mahmoud-barbary.github.io/portfolio-website/.well-known/security.txt
+Policy: https://mahmoud-barbary.github.io/portfolio-website/security-policy
