@@ -10,6 +10,7 @@ function IntroVideo({
   videoUrl = 'https://www.youtube.com/embed/ysz5S6PUM-U', // Sample public video id
   aspectRatio = '16 / 9',
 }) {
+  const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -56,9 +57,8 @@ function IntroVideo({
             className="video-player"
             controls
             preload="metadata"
-            poster="/media/intro-video.jpg"
           >
-            <source src="/media/intro-video.mp4" type="video/mp4" />
+            <source src={withBase('media/intro-video.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

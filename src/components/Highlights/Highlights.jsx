@@ -6,6 +6,7 @@ import './Highlights.css';
 import { getHighlights } from '../../data/projects.js';
 
 function Highlights({ onNavigate }) {
+  const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
   // Get highlight projects from data
   const highlights = getHighlights();
   
@@ -55,8 +56,7 @@ function Highlights({ onNavigate }) {
                   />
                 ) : project.media.type === 'video' ? (
                   <video
-                    src={project.media.src}
-                    poster={project.media.poster}
+                    src={typeof project.media.src === 'string' ? withBase(project.media.src.replace(/^\//, '')) : project.media.src}
                     className="thumbnail-video"
                     muted
                     loop
@@ -64,11 +64,11 @@ function Highlights({ onNavigate }) {
                     preload="metadata"
                     autoPlay
                   >
-                    <source src={project.media.src} type="video/mp4" />
+                    <source src={typeof project.media.src === 'string' ? withBase(project.media.src.replace(/^\//, '')) : project.media.src} type="video/mp4" />
                   </video>
                 ) : (
                   <img
-                    src={project.media.src}
+                    src={typeof project.media.src === 'string' ? withBase(project.media.src.replace(/^\//, '')) : project.media.src}
                     alt={project.media.alt}
                     className="thumbnail-image"
                   />

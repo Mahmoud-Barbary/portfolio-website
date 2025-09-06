@@ -5,6 +5,8 @@ import React, { useRef, useEffect } from 'react';
 import './Software.css';
 
 // Placeholder software projects data
+const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const softwareProjects = [
   {
     id: 1,
@@ -20,8 +22,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/medhat.mp4',
-      poster: '/media/medhat.jpg',
+      src: withBase('media/medhat.mp4'),
       alt: 'Medhat medical chatbot interface'
     },
     links: [
@@ -47,8 +48,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/chess.mp4',
-      poster: '/media/chess.jpg',
+      src: withBase('media/chess.mp4'),
       alt: 'Chess game interface'
     },
     links: [
@@ -74,8 +74,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/solitaire.mp4',
-      poster: '/media/solitaire.jpg',
+      src: withBase('media/solitaire.mp4'),
       alt: 'Solitaire game interface'
     },
     links: [
@@ -101,8 +100,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/robot-arm.mp4',
-      poster: '/media/robot-arm.jpg',
+      src: withBase('media/robot-arm.mp4'),
       alt: 'Human pose controlled robot arm'
     },
     links: [
@@ -128,8 +126,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/delivery-system.mp4',
-      poster: '/media/delivery-system.jpg',
+      src: withBase('media/delivery-system.mp4'),
       alt: 'Delivery coordination system overview'
     },
     links: [
@@ -155,8 +152,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/foodmah.mp4',
-      poster: '/media/foodmah.jpg',
+      src: withBase('media/foodmah.mp4'),
       alt: 'Foo-D-Mah demo reel'
     },
     links: [
@@ -187,7 +183,7 @@ const softwareProjects = [
     ],
     media: {
       type: 'image',
-      src: '/media/steam-classifier.jpg',
+      src: withBase('media/steam-classifier.jpg'),
       alt: 'Steam Game Tag Classifier project overview'
     },
     links: [

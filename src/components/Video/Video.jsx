@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import './Video.css';
 
+const withBase = (path) => `${import.meta.env.BASE_URL}${path}`.replace(/\/+/, '/');
+
 const videoProjects = [
   {
     id: 'real-estate-campaign',
@@ -15,8 +17,7 @@ const videoProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/real-estate-campaign.mp4',
-      poster: '/media/real-estate-campaign.jpg',
+      src: withBase('media/real-estate-campaign.mp4'),
       alt: 'Real Estate Marketing Campaign video'
     },
     links: [],
@@ -35,8 +36,7 @@ const videoProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/medical-testimonials.mp4',
-      poster: '/media/medical-testimonials.jpg',
+      src: withBase('media/medical-testimonials.mp4'),
       alt: 'Medical Clinic Patient Testimonials video'
     },
     links: [],
@@ -55,8 +55,7 @@ const videoProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/ieee-promotion.mp4',
-      poster: '/media/ieee-promotion.jpg',
+      src: withBase('media/ieee-promotion.mp4'),
       alt: 'IEEE Event Promotion video'
     },
     links: [],
@@ -75,8 +74,7 @@ const videoProjects = [
     ],
     media: {
       type: 'video',
-      src: '/media/video-essays.mp4',
-      poster: '/media/video-essays.jpg',
+      src: withBase('media/video-essays.mp4'),
       alt: 'Video Essays & Creative Content compilation'
     },
     links: [],

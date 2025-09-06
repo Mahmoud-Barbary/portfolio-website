@@ -3,6 +3,13 @@
 
 import React, { useState } from 'react';
 import './Experience.css';
+import imgHighSchool from '../../assets/experience/High School Graduation.jpg';
+import imgConference from '../../assets/experience/Conference Speaker.jpg';
+import imgVideoEditor from '../../assets/experience/Video Editor.jpg';
+import imgAIIntern from '../../assets/experience/AI Engineering Intern.png';
+import imgInternationalUMN from '../../assets/experience/International Year at UMN.jpg';
+import imgCommunication from '../../assets/experience/Communication Liaison.png';
+import imgDualGraduation from '../../assets/experience/Dual Graduation.jpg';
 
 // Experience data — chronological order from 2021 to present
 // Supports multiple items per year via month labels
@@ -15,7 +22,7 @@ const experienceData = [
     company: 'Egypt (National Rank 132)',
     description: 'Graduated high school ranked 132nd nationally; earned a full scholarship to study at Egypt University of Informatics (EUI).',
     shortDescription: 'Ranked 132nd nationally and earned a full scholarship to study at Egypt University of Informatics.',
-    image: '/src/assets/experience/High School Graduation.jpg'
+    image: imgHighSchool
   },
   {
     id: 2,
@@ -25,7 +32,7 @@ const experienceData = [
     company: 'Digital Egypt Initiative',
     description: 'Represented EUI as a speaker at the Digital Egypt initiative & conference before the President of Egypt.',
     shortDescription: 'Represented my university and presented in front of Egypt\'s president at a national conference.',
-    image: '/src/assets/experience/Conference Speaker.jpg'
+    image: imgConference
   },
   {
     id: 3,
@@ -35,7 +42,7 @@ const experienceData = [
     company: 'Medical Startup & Real Estate Ads',
     description: 'Produced promotional videos and ads for a medical startup introducing a new medicine locally, as well as real estate campaigns. Engagement-focused content. (Oct 2022 – Mar 2023)',
     shortDescription: 'Created promotional videos for medical startups and real estate, developing my creative and editing skills.',
-    image: '/src/assets/experience/Video Editor.jpg'
+    image: imgVideoEditor
   },
   {
     id: 4,
@@ -45,7 +52,7 @@ const experienceData = [
     company: 'Premio.AI',
     description: 'Contributed to Arabic LLM development; researched, evaluated and processed diverse datasets; published a 900M-row dataset on Hugging Face; laid groundwork for a research paper. (May – Sep 2023)',
     shortDescription: 'Published a 900M+ row dataset on Hugging Face and contributed to Arabic language model development.',
-    image: '/src/assets/experience/AI Engineering Intern.png'
+    image: imgAIIntern
   },
   {
     id: 5,
@@ -55,7 +62,7 @@ const experienceData = [
     company: 'University of Minnesota',
     description: 'Awarded a merit-based full scholarship to complete final year at UMN; began taking UMN courses online alongside EUI coursework, then travelled to Minnesota for the international year abroad.',
     shortDescription: 'Earned a full merit scholarship and travelled to Minnesota to complete my final year abroad as an international student.',
-    image: '/src/assets/experience/International Year at UMN.jpg'
+    image: imgInternationalUMN
   },
   {
     id: 6,
@@ -65,7 +72,7 @@ const experienceData = [
     company: 'UMN Off-Campus Living',
     description: 'Produced promotional content and videos; led outreach campaigns; assisted students; handled calls and emails; represented the office at fairs and events; increased social engagement by 175%. (Oct 2024 – May 2025)',
     shortDescription: 'Produced promotional content and videos while leading outreach campaigns and assisting students with housing needs.',
-    image: '/src/assets/experience/Communication Liaison.png'
+    image: imgCommunication
   },
   {
     id: 7,
@@ -75,7 +82,7 @@ const experienceData = [
     company: 'EUI & UMN',
     description: 'Graduated from both Egypt University of Informatics and the University of Minnesota (dual degree).',
     shortDescription: 'Graduated with dual degrees from both universities, completing my international academic journey.',
-    image: '/src/assets/experience/Dual Graduation.jpg'
+    image: imgDualGraduation
   }
 ];
 

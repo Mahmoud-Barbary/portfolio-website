@@ -17,8 +17,7 @@ export const projects = {
       tech: ['Python', 'Flask', 'PostgreSQL', 'Natural Language Processing'],
       media: {
         type: 'video',
-        src: '/media/medhat.mp4',
-        poster: '/media/medhat.jpg',
+        src: `${import.meta.env.BASE_URL}media/medhat.mp4`,
         alt: 'Medhat medical chatbot interface'
       },
       links: [
@@ -44,8 +43,7 @@ export const projects = {
       tech: ['C++', 'SFML', 'Git'],
       media: {
         type: 'video',
-        src: '/media/chess.mp4',
-        poster: '/media/chess.jpg',
+        src: `${import.meta.env.BASE_URL}media/chess.mp4`,
         alt: 'Chess game interface'
       },
       links: [
@@ -71,8 +69,7 @@ export const projects = {
       tech: ['C++', 'SFML', 'Git'],
       media: {
         type: 'video',
-        src: '/media/solitaire.mp4',
-        poster: '/media/solitaire.jpg',
+        src: `${import.meta.env.BASE_URL}media/solitaire.mp4`,
         alt: 'Solitaire game interface'
       },
       links: [
@@ -98,8 +95,7 @@ export const projects = {
       tech: ['Python', 'ROS', 'MediaPipe', 'MoveIt', 'Computer Vision'],
       media: {
         type: 'video',
-        src: '/media/robot-arm.mp4',
-        poster: '/media/robot-arm.jpg',
+        src: `${import.meta.env.BASE_URL}media/robot-arm.mp4`,
         alt: 'Human pose controlled robot arm'
       },
       links: [
@@ -125,8 +121,7 @@ export const projects = {
       tech: ['Java', 'UML', 'Design Patterns', 'Figma', 'Jira'],
       media: {
         type: 'video',
-        src: '/media/delivery-system.mp4',
-        poster: '/media/delivery-system.jpg',
+        src: `${import.meta.env.BASE_URL}media/delivery-system.mp4`,
         alt: 'Delivery coordination system overview'
       },
       links: [
@@ -152,8 +147,7 @@ export const projects = {
       tech: ['Figma', 'Miro', 'UI/UX'],
       media: {
         type: 'video',
-        src: '/media/foodmah.mp4',
-        poster: '/media/foodmah.jpg',
+        src: `${import.meta.env.BASE_URL}media/foodmah.mp4`,
         alt: 'Foo-D-Mah demo reel'
       },
       links: [
@@ -184,7 +178,7 @@ export const projects = {
       tech: ['Python', 'Machine Learning', 'Neural Networks', 'GMM'],
       media: {
         type: 'image',
-        src: '/media/steam-classifier.jpg',
+        src: `${import.meta.env.BASE_URL}media/steam-classifier.jpg`,
         alt: 'Steam Game Tag Classifier project overview'
       },
       links: [
@@ -212,8 +206,7 @@ export const projects = {
       ],
       media: {
         type: 'video',
-        src: '/media/real-estate-campaign.mp4',
-        poster: '/media/real-estate-campaign.jpg',
+        src: `${import.meta.env.BASE_URL}media/real-estate-campaign.mp4`,
         alt: 'Real Estate Marketing Campaign video'
       },
       links: [
@@ -238,8 +231,7 @@ export const projects = {
       ],
       media: {
         type: 'video',
-        src: '/media/medical-testimonials.mp4',
-        poster: '/media/medical-testimonials.jpg',
+        src: `${import.meta.env.BASE_URL}media/medical-testimonials.mp4`,
         alt: 'Medical Clinic Patient Testimonials video'
       },
       links: [
@@ -264,8 +256,7 @@ export const projects = {
       ],
       media: {
         type: 'video',
-        src: '/media/ieee-promotion.mp4',
-        poster: '/media/ieee-promotion.jpg',
+        src: `${import.meta.env.BASE_URL}media/ieee-promotion.mp4`,
         alt: 'IEEE Event Promotion video'
       },
       links: [
@@ -290,8 +281,7 @@ export const projects = {
       ],
       media: {
         type: 'video',
-        src: '/media/video-essays.mp4',
-        poster: '/media/video-essays.jpg',
+        src: `${import.meta.env.BASE_URL}media/video-essays.mp4`,
         alt: 'Video Essays & Creative Content compilation'
       },
       links: [
@@ -320,8 +310,7 @@ export const projects = {
       tech: ['Godot', 'GDScript', 'Game Design', 'Pixel Art', 'Git'],
       media: {
         type: 'video',
-        src: '/media/project-clash.mp4',
-        poster: '/media/project-clash.jpg',
+        src: `${import.meta.env.BASE_URL}media/project-clash.mp4`,
         alt: 'Project Clash 2D fighting game development'
       },
       links: [],
