@@ -278,6 +278,9 @@
     transform: none;
     margin-bottom: 0.75rem;
     align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
   .marker-line { display: none; }
@@ -295,6 +298,7 @@
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     box-shadow: 0 0 18px rgba(168,85,247,0.15);
+    margin: 0 auto; /* center on the timeline */
   }
   .marker-element.expanded { width: min(95%, 380px); height: auto; border-radius: 16px; }
   .marker-content { opacity: 1; display: flex; }
