@@ -259,7 +259,16 @@
     font-size: 1rem;
   }
   
-  .timeline-line { display: none; }
+  /* Show a simple vertical timeline on mobile */
+  .timeline-line {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    transform: none;
+  }
   
   .experience-item { min-height: auto; margin-bottom: 2.5rem; }
   
@@ -268,6 +277,8 @@
     left: auto;
     transform: none;
     margin-bottom: 0.5rem;
+    padding-left: 48px; /* space for the vertical line */
+    align-items: flex-start;
   }
   
   .marker-line { display: none; }
@@ -276,21 +287,23 @@
   .marker-element {
     position: relative;
     top: auto;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    border-radius: 16px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
     transform: none;
+    background-color: var(--bg-primary);
   }
+  .marker-element.expanded { width: 16px; height: 16px; border-radius: 50%; }
+  .marker-content { display: none; }
   .marker-element.expanded {
     width: 100%;
     height: auto;
   }
-  .marker-content { opacity: 1; }
-  .content-image { height: 160px; }
-  .marker-date { position: relative; top: auto; margin-top: 0; }
-  .marker-title { position: relative; top: auto; margin-top: 0.5rem; }
+  .content-image { height: auto; }
+  .marker-date { position: relative; top: auto; margin: 0.25rem 0 0 0; }
+  .marker-title { position: relative; top: auto; margin: 0.25rem 0 0.75rem 0; text-align: left; padding-left: 8px; }
   
   /* Ensure items stack cleanly */
-  .experience-items { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .experience-items { display: flex; flex-direction: column; gap: 1.25rem; }
 }

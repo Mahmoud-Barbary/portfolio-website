@@ -109,24 +109,27 @@
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
   .education {
-    padding: 0.3rem 1rem 1rem 1rem; /* Match hero mobile padding */
+    width: 100%;
+    padding: 1rem; /* Match hero mobile padding */
   }
   
   .graduation-image {
-    max-width: 220px; /* Smaller max-width on mobile */
+    max-width: 320px; /* Larger on mobile to fill width */
   }
   
   .education-content {
-    gap: 1rem; /* Even tighter spacing on mobile */
+    gap: 1rem; /* Even spacing on mobile */
   }
   
   .universities-container {
-    gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
   
   .university-logo {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 100px;
+    max-height: 100px;
   }
   
   .logo-image {
