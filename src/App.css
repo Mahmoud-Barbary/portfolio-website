@@ -54,6 +54,12 @@
   /* Remove fixed height - let content drive sizing */
 }
 
+@media (max-width: 768px) {
+  .hero-education-container {
+    flex-direction: column;
+  }
+}
+
 /* Basic link styling */
 a {
   /* Remove default underline */

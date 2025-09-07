@@ -1,13 +1,39 @@
 // Highlights component for the portfolio website
 // Displays three highlight cards for Software, Video, and Games projects
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Highlights.css';
 import { getHighlights } from '../../data/projects.js';
 
 function Highlights({ onNavigate }) {
   // Get highlight projects from data
   const highlights = getHighlights();
+  const videoRefs = useRef({});
+
+  useEffect(() => {
+    const entries = Object.values(videoRefs.current);
+    if (entries.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (obsEntries) => {
+        obsEntries.forEach((entry) => {
+          const video = entry.target;
+          if (!video) return;
+          if (entry.isIntersecting) {
+            // Ensure a first frame is visible without waiting
+            try { video.currentTime = 0.1; } catch (_) {}
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    entries.forEach((v) => v && observer.observe(v));
+    return () => entries.forEach((v) => v && observer.unobserve(v));
+  }, []);
   
   // Convert to array format for mapping
   const highlightsArray = [
@@ -55,13 +81,13 @@ function Highlights({ onNavigate }) {
                   />
                 ) : project.media.type === 'video' ? (
                   <video
+                    ref={(el) => (videoRefs.current[project.id] = el)}
                     src={project.media.src}
                     className="thumbnail-video"
                     muted
                     loop
                     playsInline
-                    preload="metadata"
-                    autoPlay
+                    preload="none"
                   >
                     <source src={project.media.src} type="video/mp4" />
                   </video>

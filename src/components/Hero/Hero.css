@@ -5,7 +5,7 @@
   /* Side by side layout with photo and text */
   display: flex;
   align-items: center; /* Center content vertically */
-  width: 70%; /* Takes up left portion */
+  width: 70%; /* Takes up left portion on desktop */
   padding: 2rem; /* Consistent padding */
   background-color: var(--bg-primary);
   
@@ -88,7 +88,14 @@
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
   .hero {
-    padding: 0.3rem 1rem 1rem 1rem; /* Even tighter padding on mobile */
+    width: 100%;
+    padding: 1rem; /* Comfortable padding on mobile */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-photo {
+    margin: 0 0 1rem 0;
   }
   
   .hero-statement {
@@ -110,12 +117,10 @@
     gap: 0.3rem;
   }
   
-  .hero-photo {
-    margin-right: 2rem;
-  }
-  
   .profile-photo {
-    max-width: 200px;
-    max-height: 200px;
+    width: 55vw;
+    height: 55vw;
+    max-width: 320px;
+    max-height: 320px;
   }
 }
