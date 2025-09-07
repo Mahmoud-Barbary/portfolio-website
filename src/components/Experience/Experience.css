@@ -259,15 +259,15 @@
     font-size: 1rem;
   }
   
-  /* Show a simple vertical timeline on mobile */
+  /* Center vertical timeline */
   .timeline-line {
     display: block;
     position: absolute;
-    left: 24px;
+    left: 50%;
     top: 0;
     bottom: 0;
     width: 3px;
-    transform: none;
+    transform: translateX(-50%);
   }
   
   .experience-item { min-height: auto; margin-bottom: 2.5rem; }
@@ -276,34 +276,51 @@
     position: relative;
     left: auto;
     transform: none;
-    margin-bottom: 0.5rem;
-    padding-left: 48px; /* space for the vertical line */
-    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    align-items: center;
   }
   
   .marker-line { display: none; }
 
   /* Place the interactive card as a full-width block under the marker */
+  /* Card-like expanded entry */
   .marker-element {
     position: relative;
     top: auto;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+    left: auto;
+    width: min(95%, 380px);
+    height: auto;
+    border-radius: 16px;
     transform: none;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 18px rgba(168,85,247,0.15);
   }
-  .marker-element.expanded { width: 16px; height: 16px; border-radius: 50%; }
-  .marker-content { display: none; }
+  .marker-element.expanded { width: min(95%, 380px); height: auto; border-radius: 16px; }
+  .marker-content { opacity: 1; display: flex; }
   .marker-element.expanded {
     width: 100%;
     height: auto;
   }
-  .content-image { height: auto; }
-  .marker-date { position: relative; top: auto; margin: 0.25rem 0 0 0; }
-  .marker-title { position: relative; top: auto; margin: 0.25rem 0 0.75rem 0; text-align: left; padding-left: 8px; }
+  .content-image { height: 160px; }
+  .marker-date { position: relative; top: auto; margin: 0.5rem 0 0 0; text-align: center; }
+  .marker-title { display: none; }
   
   /* Ensure items stack cleanly */
-  .experience-items { display: flex; flex-direction: column; gap: 1.25rem; }
+  .experience-items { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; position: relative; }
+
+  /* connector dots on the center line */
+  .experience-item { padding-top: 12px; }
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 3px solid var(--accent-purple);
+  }
 }
