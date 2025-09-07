@@ -9,19 +9,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
-// Production-only service worker registration
-if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+// Proactively unregister any existing service workers (avoid stale caches masking updates)
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    const swUrl = `${import.meta.env.BASE_URL}sw.js`;
-    navigator.serviceWorker.register(swUrl).catch((err) => {
-      console.log('SW registration failed:', err);
+    navigator.serviceWorker.getRegistrations().then((regs) => {
+      regs.forEach((reg) => reg.unregister());
     });
-  });
-}
-
-// In development, proactively unregister any existing service workers to avoid scope conflicts
-if (import.meta.env.DEV && 'serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then((regs) => {
-    regs.forEach((reg) => reg.unregister());
+    if ('caches' in window) {
+      caches.keys().then((keys) => keys.forEach((k) => caches.delete(k))).catch(() => {});
+    }
   });
 }
