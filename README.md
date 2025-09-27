@@ -69,29 +69,5 @@ public/
   resume.pdf             # opens in-browser
   manifest.json, robots.txt, sitemap.xml, sw.js
 ```
-
-## Editing Content
-- Experience timeline: edit entries in `src/components/Experience/Experience.jsx` (data array at top).
-- Projects and highlights: edit `src/data/projects.js`.
-  - `getHighlights()` controls which items appear on the home highlights grid.
-- Assets:
-  - Experience images: `src/assets/experience/…`
-  - Project media (videos/images): `public/media/…`
-
-## Accessibility & UX
-- Reduced-motion media and animation considerations (prefers-reduced-motion respected).
-- Clear, consistent typography and restrained color use for readability.
-- Interactive markers keep original hover/expand behavior, with a subtle idle ring pulse to encourage exploration.
-
-## Scripts
-```json
-{
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "deploy": "gh-pages -d dist"
-}
-```
-
 ## Acknowledgments
 - Built and iterated in Cursor with AI assistance, guided by a human-centered design process.
