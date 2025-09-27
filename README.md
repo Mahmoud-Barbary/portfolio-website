@@ -10,7 +10,7 @@ Clean, responsive portfolio showcasing work across software, video, and games. B
 ### Why this project
 This site is both a keepsake for past projects and a home for future ones. It was also an experiment in AI‑assisted development: the project was built end‑to‑end inside the AI-powered IDE Cursor, focusing my effort on design, structure, and UX while using the assistant to implement and refine components. The process reinforced that great results still require a human vision, attention to detail, and iterative guidance.
 
-- Context post: [LinkedIn announcement]([https://lnkd.in/dyW2SJAm](https://www.linkedin.com/feed/update/urn:li:activity:7375120277115940864/))
+- Context post: [LinkedIn announcement](https://www.linkedin.com/posts/mahmoud-ibrahim-barbary_webdevelopment-portfolio-ai-activity-7375120277115940864-8aGR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEX1gVkBqsAVm7zEVx5ZqxHYeIKe_eXs2bo)
 
 ## Features
 - Interactive experience timeline with expandable markers (hover to reveal rich cards with image + text)
