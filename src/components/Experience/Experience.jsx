@@ -9,7 +9,8 @@ import imgVideoEditor from '../../assets/experience/Video Editor.jpg';
 import imgAIIntern from '../../assets/experience/AI Engineering Intern.png';
 import imgInternationalUMN from '../../assets/experience/International Year at UMN.jpg';
 import imgCommunication from '../../assets/experience/Communication Liaison.png';
-import imgDualGraduation from '../../assets/experience/Dual Graduation.jpg';
+import imgUMNGraduation from '../../assets/experience/UMN Graduation.jpg';
+import imgEUGraduation from '../../assets/experience/EUI Graduation.jpg';
 
 // Experience data — chronological order from 2021 to present
 // Supports multiple items per year via month labels
@@ -56,9 +57,9 @@ const experienceData = [
   },
   {
     id: 5,
-    date: '2023',
-    month: 'Jun',
-    title: 'International Year at UMN',
+    date: '2024',
+    month: 'Aug',
+    title: 'Abroad Year at UMN',
     company: 'University of Minnesota',
     description: 'Awarded a merit-based full scholarship to complete final year at UMN; began taking UMN courses online alongside EUI coursework, then travelled to Minnesota for the international year abroad.',
     shortDescription: 'Earned a full merit scholarship and travelled to Minnesota to complete my final year abroad as an international student.',
@@ -78,11 +79,21 @@ const experienceData = [
     id: 7,
     date: '2025',
     month: 'May',
-    title: 'Dual Graduation',
-    company: 'EUI & UMN',
-    description: 'Graduated from both Egypt University of Informatics and the University of Minnesota (dual degree).',
-    shortDescription: 'Graduated with dual degrees from both universities, completing my international academic journey.',
-    image: imgDualGraduation
+    title: 'UMN Graduation',
+    company: 'University of Minnesota',
+    description: 'Completed my senior year at the University of Minnesota and graduated with a B.S. in Computer Science following my international year abroad.',
+    shortDescription: 'Graduated from UMN after completing my international year abroad.',
+    image: imgUMNGraduation
+  },
+  {
+    id: 8,
+    date: '2025',
+    month: 'Sep',
+    title: 'EUI Graduation',
+    company: 'Egypt University of Informatics (EUI)',
+    description: 'Awarded a B.Sc. in Computer Science from EUI, ranking first in the CS faculty. Delivered the commencement speech on behalf of EUI’s first graduating cohort before national and university leaders.',
+    shortDescription: 'Ranked first in CS and delivered the commencement speech for EUI’s first cohort.',
+    image: imgEUGraduation
   }
 ];
 

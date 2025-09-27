@@ -116,6 +116,37 @@
   justify-content: center;
 }
 
+/* Ring pulse: animate border color and width for a stronger, in-line glow */
+@keyframes experienceRingBreath {
+  0%, 100% {
+    border-color: var(--accent-purple);
+    border-width: 3px;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+  }
+  50% {
+    border-color: var(--accent-purple-bright, #d8b4fe);
+    border-width: 4px;
+    box-shadow: 0 0 18px 2px rgba(168, 85, 247, 0.38);
+  }
+}
+
+@media (min-width: 769px) {
+  .marker-element:not(.expanded) {
+    animation: experienceRingBreath 3.0s ease-in-out infinite;
+    will-change: border-width, border-color, box-shadow;
+  }
+  .marker-element:hover {
+    animation: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker-element {
+    animation: none !important;
+  }
+}
+
 /* Position elements at the end of the extending lines */
 .experience-item:nth-child(odd) .marker-element {
   right: 120px; /* anchor right edge at end of left line */
@@ -171,6 +202,7 @@
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
   z-index: 10;
   background-color: var(--bg-secondary);
+  overflow: hidden;
 }
 
 /* Show content when expanded */
