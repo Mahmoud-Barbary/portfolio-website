@@ -3,7 +3,7 @@
   "short_name": "MB Portfolio",
   "description": "Software Developer & Video Creator Portfolio",
   "start_url": ".",
-  "scope": "/portfolio-website/",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#8b5cf6",

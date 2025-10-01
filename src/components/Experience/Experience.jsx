@@ -1,7 +1,7 @@
 // Experience component for the portfolio website
 // Simple, working timeline
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Experience.css';
 import imgHighSchool from '../../assets/experience/High School Graduation.jpg';
 import imgConference from '../../assets/experience/Conference Speaker.jpg';
@@ -100,6 +100,16 @@ const experienceData = [
 // Main Experience component function
 function Experience() {
   const [hoveredId, setHoveredId] = useState(null);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    try {
+      const touch = window.matchMedia('(hover: none), (pointer: coarse)').matches || 'ontouchstart' in window;
+      setIsTouch(touch);
+    } catch {
+      setIsTouch(false);
+    }
+  }, []);
 
   return (
     <section className="experience">
@@ -107,7 +117,7 @@ function Experience() {
       <div className="experience-header">
         <h2 className="experience-title">Experience</h2>
         <p className="experience-subtitle">My academic and professional path through the years</p>
-        <p className="experience-instruction">(Hover over a circle for more details)</p>
+        <p className="experience-instruction">{isTouch ? '(Tap a circle for more details)' : '(Hover over a circle for more details)'}</p>
       </div>
 
       {/* Timeline container */}
@@ -125,13 +135,22 @@ function Experience() {
                  <div className={`marker-line ${index % 2 === 0 ? 'left' : 'right'}`}></div>
                  
                  {/* Single element that changes from circle to square */}
-                 <div 
-                   className={`marker-element ${hoveredId === item.id ? 'expanded' : ''}`}
-                   onMouseEnter={() => setHoveredId(item.id)}
-                   onMouseLeave={() => setHoveredId(null)}
-                 >
+                <div 
+                  className={`marker-element ${hoveredId === item.id ? 'expanded' : ''}`}
+                  onMouseEnter={() => { if (!isTouch) setHoveredId(item.id); }}
+                  onMouseLeave={() => { if (!isTouch) setHoveredId(null); }}
+                  onClick={() => setHoveredId(hoveredId === item.id ? null : item.id)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setHoveredId(hoveredId === item.id ? null : item.id);
+                    }
+                  }}
+                  aria-expanded={hoveredId === item.id}
+                >
                    {/* Content that shows when expanded */}
-                   <div className={`marker-content ${hoveredId === item.id ? 'visible' : ''}`}>
+                  <div className={`marker-content ${hoveredId === item.id ? 'visible' : ''}`}>
                      <div className="content-image">
                        <img src={item.image} alt={item.title} />
                      </div>

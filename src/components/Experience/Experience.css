@@ -282,6 +282,7 @@
   .experience {
     padding: 2rem 1rem;
   }
+  .timeline-container { margin-top: 8rem; }
   
   .experience-title {
     font-size: 2rem;
@@ -302,13 +303,14 @@
     transform: translateX(-50%);
   }
   
-  .experience-item { min-height: auto; margin-bottom: 2.5rem; }
+  .experience-item { min-height: auto; margin-bottom: 4rem; }
   
   .timeline-marker {
     position: relative;
-    left: auto;
-    transform: none;
-    margin-bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -0.50rem;
+    padding-bottom: 2.2rem; /* reserve space for absolute date */
     align-items: center;
     width: 100%;
     display: flex;
@@ -318,46 +320,38 @@
   
   .marker-line { display: none; }
 
-  /* Place the interactive card as a full-width block under the marker */
-  /* Card-like expanded entry */
-  .marker-element {
+  /* Center markers regardless of odd/even and override desktop offsets */
+  .experience-item .timeline-marker .marker-element {
     position: relative;
     top: auto;
     left: 50%;
-    width: min(95%, 380px);
+    right: auto;
+    transform: translateX(-50%);
+  }
+  .experience-item:nth-child(odd) .marker-element,
+  .experience-item:nth-child(even) .marker-element { left: 50% !important; right: auto !important; transform: translateX(-50%) !important; }
+  .marker-element.expanded {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 340px);
     height: auto;
     border-radius: 16px;
-    transform: translateX(-50%);
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     box-shadow: 0 0 18px rgba(168,85,247,0.15);
-    margin: 0; /* centered via translate */
   }
-  .marker-element.expanded { width: min(95%, 380px); height: auto; border-radius: 16px; }
-  .marker-content { opacity: 1; display: flex; }
-  .marker-element.expanded {
-    width: 100%;
-    height: auto;
-  }
+  .marker-content { opacity: 0; display: none; }
+  .marker-content.visible { opacity: 1; display: flex; }
   .content-image { height: 160px; }
-  .marker-date { position: relative; top: auto; margin: 0.5rem 0 0 0; text-align: center; align-self: center; }
-  .marker-title { display: none; }
+  .marker-date { position: absolute; left: 50%; transform: translateX(-50%); top: calc(100% + 2px); margin-top: -1.6rem; text-align: center; }
+  .marker-element.expanded { margin-bottom: 2.6rem; }
+  .marker-title { display: block; margin-top: 1.2rem; text-align: center; }
   
-  /* Ensure items stack cleanly */
-  .experience-items { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; position: relative; }
+  /* Ensure items stack cleanly and center on timeline */
+  .experience-items { display: flex; flex-direction: column; align-items: center; gap: 2rem; position: relative; }
 
   /* connector dots on the center line */
-  .experience-item { padding-top: 12px; }
-  .experience-item::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: var(--bg-primary);
-    border: 3px solid var(--accent-purple);
-  }
+  .experience-item { padding-top: 0; }
+  .experience-item::before { display: none; }
 }
