@@ -209,13 +209,7 @@ export const projects = {
         src: `${import.meta.env.BASE_URL}media/real-estate-campaign.mp4`,
         alt: 'Real Estate Marketing Campaign video'
       },
-      links: [
-        {
-          label: 'Watch Full Video',
-          href: '#', // Replace with your Google Drive or YouTube link
-          kind: 'video'
-        }
-      ],
+      links: [],
       status: 'completed'
     },
     {
@@ -234,13 +228,7 @@ export const projects = {
         src: `${import.meta.env.BASE_URL}media/medical-testimonials.mp4`,
         alt: 'Medical Clinic Patient Testimonials video'
       },
-      links: [
-        {
-          label: 'Watch Full Video',
-          href: '#', // Replace with your Google Drive or YouTube link
-          kind: 'video'
-        }
-      ],
+      links: [],
       status: 'completed'
     },
     {
@@ -259,13 +247,7 @@ export const projects = {
         src: `${import.meta.env.BASE_URL}media/ieee-promotion.mp4`,
         alt: 'IEEE Event Promotion video'
       },
-      links: [
-        {
-          label: 'Watch Full Video',
-          href: '#', // Replace with your Google Drive or YouTube link
-          kind: 'video'
-        }
-      ],
+      links: [],
       status: 'completed'
     },
     {
@@ -284,13 +266,7 @@ export const projects = {
         src: `${import.meta.env.BASE_URL}media/video-essays.mp4`,
         alt: 'Video Essays & Creative Content compilation'
       },
-      links: [
-        {
-          label: 'Watch Full Video',
-          href: '#', // Replace with your Google Drive or YouTube link
-          kind: 'video'
-        }
-      ],
+      links: [],
       status: 'completed'
     }
   ],

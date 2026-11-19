@@ -1,55 +1,25 @@
-// Games component for the portfolio website
-// This page displays all game development projects
-
 import React, { useRef, useEffect } from 'react';
 import './Games.css';
+import { getProjectsByCategory } from '../../data/projects.js';
 
-// Games projects data
-const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
-const gamesProjects = [
-  {
-    id: 1,
-    title: 'Project Clash',
-    description: 'A strategic 2D sword-fighting game combining turn-based elements within real-time mechanics. Acts as a continuous learning project and as it expands, something that can be published and/or commercially sold.',
-    longDescription: 'Project Clash is an ambitious 2D fighting game that blends strategic turn-based decision-making with real-time combat mechanics. Built from scratch using industry-standard design patterns, this project serves as both a learning platform and a potential commercial product. The game emphasizes clean, modular code architecture and comprehensive documentation.',
-    tech: ['Godot', 'GDScript', 'Game Design', 'Pixel Art', 'Git'],
-    highlights: [
-      'Building logic and finite state machines from scratch',
-      'Emphasizing clean, modular and well-documented code',
-      'Learning art, animation and game engine workflows',
-      'Utilizing multiple industry-standard design patterns'
-    ],
-    media: {
-      type: 'video',
-      src: withBase('media/project-clash.mp4'),
-      alt: 'Project Clash 2D fighting game development'
-    },
-    links: [],
-    status: 'in-progress'
-  }
-];
+const gamesProjects = getProjectsByCategory('games');
 
 // Main Games component function
 function Games() {
   const videoRefs = useRef({});
 
   useEffect(() => {
-    // Ensure videos show first frame immediately
-    Object.values(videoRefs.current).forEach((video) => {
-      if (video) {
-        video.currentTime = 0.1; // Seek to first frame
-        video.load(); // Force load
-      }
-    });
-
-    // Create intersection observer to handle video autoplay
+    // Create intersection observer to handle video autoplay on scroll
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const video = entry.target;
           if (entry.isIntersecting) {
             // Video is visible - play it
-            video.play().catch(console.error);
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
           } else {
             // Video is not visible - pause it
             video.pause();
@@ -57,8 +27,8 @@ function Games() {
         });
       },
       {
-        threshold: 0.5, // Trigger when 50% of video is visible
-        rootMargin: '0px 0px -10% 0px' // Start playing when video is 10% from bottom of viewport
+        threshold: 0.25,
+        rootMargin: '100px 0px'
       }
     );
 
@@ -100,8 +70,7 @@ function Games() {
                          muted
                          loop
                          playsInline
-                         preload="metadata"
-                         loading="lazy"
+                         preload="none"
                          poster={project.media.poster}
                        >
                          <source src={project.media.src} type="video/mp4" />

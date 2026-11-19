@@ -11,6 +11,7 @@ import imgInternationalUMN from '../../assets/experience/International Year at U
 import imgCommunication from '../../assets/experience/Communication Liaison.png';
 import imgUMNGraduation from '../../assets/experience/UMN Graduation.jpg';
 import imgEUGraduation from '../../assets/experience/EUI Graduation.jpg';
+import imgMilitary from '../../assets/experience/National Military Service.webp';
 
 // Experience data — chronological order from 2021 to present
 // Supports multiple items per year via month labels
@@ -94,6 +95,17 @@ const experienceData = [
     description: 'Awarded a B.Sc. in Computer Science from EUI, ranking first in the CS faculty. Delivered the commencement speech on behalf of EUI’s first graduating cohort before national and university leaders.',
     shortDescription: 'Ranked first in CS and delivered the commencement speech for EUI’s first cohort.',
     image: imgEUGraduation
+  },
+  {
+    id: 9,
+    date: '2025 – 2027',
+    month: 'Oct',
+    dateRange: 'Oct 2025 – Feb 2027',
+    title: 'National Military Service',
+    company: 'Egyptian Armed Forces',
+    description: 'Fulfilling mandatory national military service following graduation. Actively dedicating off-duty hours to independent software engineering, Godot game design, and keeping technical skills sharp in preparation for post-service roles.',
+    shortDescription: 'Fulfilling mandatory national service while dedicating off-duty hours to independent software projects and technical growth.',
+    image: imgMilitary
   }
 ];
 
@@ -163,7 +175,7 @@ function Experience() {
                  </div>
                  
                  {/* Date */}
-                 <div className="marker-date">{item.month} {item.date}</div>
+                 <div className="marker-date">{item.dateRange || `${item.month} ${item.date}`}</div>
                  
                  {/* Event title */}
                  <div className="marker-title">{item.title}</div>

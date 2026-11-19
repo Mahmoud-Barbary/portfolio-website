@@ -10,6 +10,8 @@ import Experience from './components/Experience/Experience.jsx'
 import Software from './components/Software/Software.jsx'
 import Video from './components/Video/Video.jsx'
 import Games from './components/Games/Games.jsx'
+import Skills from './components/Skills/Skills.jsx'
+import Contact from './components/Contact/Contact.jsx'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx'
 
 // Main App function component
@@ -77,6 +79,9 @@ function App() {
             {/* Project highlights section */}
             <Highlights onNavigate={handleNavigation} />
             
+            {/* Skills & proficiencies section */}
+            <Skills />
+
             {/* Experience timeline section */}
             <Experience />
           </main>
@@ -93,6 +98,9 @@ function App() {
         
         {/* Render current page */}
         {renderPage()}
+
+        {/* Global Contact & Footer section */}
+        <Contact />
       </div>
     </ErrorBoundary>
   )
