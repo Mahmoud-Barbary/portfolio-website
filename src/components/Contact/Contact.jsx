@@ -3,7 +3,7 @@ import './Contact.css';
 
 function Contact() {
   const [copied, setCopied] = useState(false);
-  const emailAddress = '21-101128@students.eui.edu.eg';
+  const emailAddress = 'mahmoud.ibrahim.barbary@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress).then(() => {
